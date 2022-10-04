@@ -78,3 +78,15 @@ void List::Insert(int index, int item) {
 	nuevo->next = iterador->next;
 	iterador->next = nuevo;
 }
+
+int List::GetItem(int index) {
+	if (index < 0 || index > this->Count()) {
+		throw gcnew System::IndexOutOfRangeException();
+	}
+	Node* iterador = new Node;
+	iterador = header;
+	for (int i = 0; i < index; i++) {
+		iterador = iterador->next;
+	}
+	return iterador->data;
+}
