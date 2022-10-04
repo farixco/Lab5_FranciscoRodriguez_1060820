@@ -15,3 +15,7 @@ void List::Add(int item) {
 		nuevo->data = item;
 	}
 }
+
+void List::Clear() {
+	header = nullptr;
+}
