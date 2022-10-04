@@ -39,13 +39,14 @@ int List::Count() {
 bool List::Contains(int item) {
 	Node* iterador = new Node;
 	iterador = header;
-	int indice = -1;
+	bool encontrado = false;
 	for (int i = 0; i < this->Count(); i++)
 	{
 		if (iterador->data == item) {
-			indice = i;
+			encontrado = true;
 		}
 		iterador = iterador->next;
 	}
-	return indice;
+	return encontrado;
 }
+
