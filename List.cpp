@@ -38,6 +38,7 @@ int List::Count() {
 
 bool List::Contains(int item) {
 	Node* iterador = new Node;
+	iterador = header;
 	int indice = -1;
 	for (int i = 0; i < this->Count(); i++)
 	{
