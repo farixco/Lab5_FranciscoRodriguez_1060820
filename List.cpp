@@ -115,3 +115,22 @@ int List::LastIndexOf(int item) {
 	}
 	return indice;
 }
+
+bool List::Remove(int item) {
+	bool removido = false;
+	if (header != nullptr && header->data == item) {
+		header = header->next;
+		removido = true;
+	}
+	Node* iterador = new Node;
+	iterador = header;
+	for (int i = 0; i < this->Count(); i++) {
+		if (iterador->next != nullptr && iterador->next->data == item) {
+			iterador->next = iterador->next->next;
+			i = this->Count() + 1;
+			removido = true;
+		}
+		iterador = iterador->next;
+	}
+	return removido;
+}
