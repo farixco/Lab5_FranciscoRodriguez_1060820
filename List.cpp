@@ -134,3 +134,15 @@ bool List::Remove(int item) {
 	}
 	return removido;
 }
+
+void List::RemoveAt(int index) {
+	if (index < 0 || index > this->Count()) {
+		throw gcnew System::IndexOutOfRangeException();
+	}
+	Node* iterador = new Node;
+	iterador = header;
+	for (int i = 0; i < index - 1; i++) {
+		iterador = iterador->next;
+	}
+	iterador->next = iterador->next->next;
+}
