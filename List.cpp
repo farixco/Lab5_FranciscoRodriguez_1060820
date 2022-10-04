@@ -35,3 +35,16 @@ int List::Count() {
 		return contador;
 	}
 }
+
+bool List::Contains(int item) {
+	Node* iterador = new Node;
+	int indice = -1;
+	for (int i = 0; i < this->Count(); i++)
+	{
+		if (iterador->data == item) {
+			indice = i;
+		}
+		iterador = iterador->next;
+	}
+	return indice;
+}
