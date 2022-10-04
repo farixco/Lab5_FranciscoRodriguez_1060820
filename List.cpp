@@ -50,3 +50,16 @@ bool List::Contains(int item) {
 	return encontrado;
 }
 
+int List::IndexOf(int item) {
+	int indice = -1;
+	Node* iterador = new Node;
+	iterador = header;
+	for (int i = 0; i < this->Count(); i++) {
+		if (iterador->data == item) {
+			indice = i;
+			i = this->Count() + 1;
+		}
+		iterador = iterador->next;
+	}
+	return indice;
+}
