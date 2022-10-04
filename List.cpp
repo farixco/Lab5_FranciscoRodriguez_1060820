@@ -103,3 +103,15 @@ void List::SetItem(int index, int item) {
 	iterador->data = item;
 }
 
+int List::LastIndexOf(int item) {
+	int indice = -1;
+	Node* iterador = new Node;
+	iterador = header;
+	for (int i = 0; i < this->Count(); i++) {
+		if (iterador->data == item) {
+			indice = i;
+		}
+		iterador = iterador->next;
+	}
+	return indice;
+}
