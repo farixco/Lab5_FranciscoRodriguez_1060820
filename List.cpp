@@ -63,3 +63,18 @@ int List::IndexOf(int item) {
 	}
 	return indice;
 }
+
+void List::Insert(int index, int item) {
+	if (index < 0 || index > this->Count()) {
+		throw gcnew System::IndexOutOfRangeException();
+	}
+	Node* iterador = new Node;
+	iterador = header;
+	Node* nuevo = new Node;
+	nuevo->data = item;
+	for (int i = 0; i < index - 1; i++) {
+		iterador = iterador->next;
+	}
+	nuevo->next = iterador->next;
+	iterador->next = nuevo;
+}
