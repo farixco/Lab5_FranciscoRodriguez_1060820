@@ -90,3 +90,16 @@ int List::GetItem(int index) {
 	}
 	return iterador->data;
 }
+
+void List::SetItem(int index, int item) {
+	if (index < 0 || index > this->Count()) {
+		throw gcnew System::IndexOutOfRangeException();
+	}
+	Node* iterador = new Node;
+	iterador = header;
+	for (int i = 0; i < index; i++) {
+		iterador = iterador->next;
+	}
+	iterador->data = item;
+}
+
