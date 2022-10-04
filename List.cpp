@@ -19,3 +19,19 @@ void List::Add(int item) {
 void List::Clear() {
 	header = nullptr;
 }
+
+int List::Count() {
+	if (header == nullptr) {
+		return 0;
+	}
+	else {
+		Node* iterador = new Node;
+		iterador = header;
+		int contador = 1;
+		while (iterador->next != nullptr) {
+			iterador = iterador->next;
+			contador++;
+		}
+		return contador;
+	}
+}
