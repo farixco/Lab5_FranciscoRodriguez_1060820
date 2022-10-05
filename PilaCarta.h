@@ -16,5 +16,10 @@ public:
 	Node* Pop();
 	int IndexOf(int num, bool col);
 	int Count();
+	/// <summary>
+	/// Verifica si la pila de cartas es válida según las reglas del juego 
+	/// </summary>
+	/// <returns></returns>
+	bool Validez();
 };
 
