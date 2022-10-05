@@ -13,6 +13,7 @@ private:
 	Node* header = nullptr;
 public:
 	void Push(int num, bool col);
+	void Push(Node* carta);
 	Node* Pop();
 	int IndexOf(int num, bool col);
 	int Count();

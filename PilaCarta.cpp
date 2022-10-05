@@ -15,6 +15,19 @@ void PilaCarta::Push(int num, bool col) {
 	}
 }
 
+void PilaCarta::Push(Node* carta) {
+	Node* nuevo = new Node;
+	nuevo->Numero = carta->Numero;
+	nuevo->Color = carta->Color;
+	if (header == nullptr) {
+		nuevo->Next = nullptr;
+		header = nuevo;
+	}
+	else {
+		nuevo->Next = header;
+		header = nuevo;
+}
+
 PilaCarta::Node* PilaCarta::Pop() {
 	Node* iterador = new Node;
 	if (header == nullptr) {
