@@ -26,6 +26,7 @@ void PilaCarta::Push(Node* carta) {
 	else {
 		nuevo->Next = header;
 		header = nuevo;
+	}
 }
 
 PilaCarta::Node* PilaCarta::Pop() {
