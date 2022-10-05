@@ -3,8 +3,8 @@
 class Mazo
 {
 	PilaCarta* grupos = new PilaCarta[7];
-	static bool Ganancia();
-	static void Barajar();
-	static bool Mover(int index, int origen, int destino);
+	bool Ganancia(int dificultad);
+	void Barajar();
+	bool Mover(int index, int origen, int destino);
 };
 
