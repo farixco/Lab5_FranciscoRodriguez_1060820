@@ -1,4 +1,7 @@
 #include "Mazo.h"
+#include <cstdlib>
+#include <random>
+#include <functional>
 bool Mazo::Ganancia(int dificultad) {
 	bool gano = false;
 	for (int i = 0; i < 7; i++) {
@@ -10,6 +13,7 @@ bool Mazo::Ganancia(int dificultad) {
 }
 
 void Mazo::Barajar() {
+	srand(time(0));
 	for (int i = 0; i < 7; i++) {
 		while (grupos[i].Count() != 0) {
 			grupos[i].Pop();
@@ -28,17 +32,43 @@ void Mazo::Barajar() {
 		}
 	}
 	PilaCarta* chaosTemp = new PilaCarta;
+	/*
 	for (int i = 0; i < 7; i++) {
-		for (int j = 7; j > 0; j--) {
+		for (int j = 7 - i; j > 0; j--) {
 			if (mano->Count() != 0) {
 				grupos[i].Push(mano->Pop());
 			}
 			else {
 				grupos[i].Push(chaosTemp->Pop());
 			}
-			if (grupos[i].Validez() != true && mano->Count() != 0) {
-				chaosTemp->Push(grupos[i].Pop());
-				j++;
+			if (grupos[i].Validez() != true) {
+				mano->Push(grupos[i].Pop());
+				/// <summary>
+				/// tomado de https://stackoverflow.com/questions/43329352/generating-random-boolean
+				/// </summary>
+				auto gen = std::bind(std::uniform_int_distribution<>(0, 1), std::default_random_engine());
+				bool col = gen();
+				/// <summary>
+				/// inspirado por https://stackoverflow.com/questions/13445688/how-to-generate-a-random-number-in-c
+				/// </summary>
+				chaosTemp->Push(rand() % 13 + 1, col);
+			}
+		}
+	}
+	*/
+	for (int i = 0; i < 7; i++) {
+		while (grupos[i].Count() != 7 - i) {
+			bool col = false;
+			if (rand() % 2 == 0) {
+				col = true;
+			}
+			/// <summary>
+			/// inspirado por https://stackoverflow.com/questions/13445688/how-to-generate-a-random-number-in-c
+			/// </summary>
+			chaosTemp->Push(rand() % 13 + 1, col);
+			grupos[i].Push(chaosTemp->Pop());
+			if (!grupos[i].Validez()) {
+				grupos[i].Pop();
 			}
 		}
 	}

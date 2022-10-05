@@ -76,7 +76,7 @@ bool PilaCarta::Validez() {
 	Node* iterador = new Node;
 	iterador = header;
 	for (int i = 0; i < this->Count() - 1; i++) {
-		if (iterador->Color == iterador->Next->Color || iterador->Numero <= iterador->Next->Numero) {
+		if (iterador->Color == iterador->Next->Color || iterador->Numero >= iterador->Next->Numero) {
 			valido = false;
 		}
 	}
