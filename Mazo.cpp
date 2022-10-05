@@ -30,11 +30,40 @@ void Mazo::Barajar() {
 	PilaCarta* chaosTemp = new PilaCarta;
 	for (int i = 0; i < 7; i++) {
 		for (int j = 7; j > 0; j--) {
-			grupos[i].Push(mano->Pop());
+			if (mano->Count() != 0) {
+				grupos[i].Push(mano->Pop());
+			}
+			else {
+				grupos[i].Push(chaosTemp->Pop());
+			}
 			if (grupos[i].Validez() != true) {
 				chaosTemp->Push(grupos[i].Pop());
 				j++;
 			}
 		}
 	}
+}
+
+bool Mazo::Mover(int index, int origen, int destino) {
+	PilaCarta* temporal = new PilaCarta;
+	for (int i = 0; i < index; i++) {
+		temporal->Push(grupos[origen].Pop());
+	}
+	for (int i = 0; i < index; i++) {
+		grupos[destino].Push(temporal->Pop());
+	}
+	bool movida;
+	if (grupos[destino].Validez() == true) {
+		movida = true;
+	}
+	else {
+		for (int i = 0; i < index; i++) {
+			temporal->Push(grupos[destino].Pop());
+		}
+		for (int i = 0; i < index; i++) {
+			grupos[origen].Push(temporal->Pop());
+		}
+		movida = false;
+	}
+	return movida;
 }
