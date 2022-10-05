@@ -2,6 +2,7 @@
 #include "PilaCarta.h"
 class Mazo
 {
+public:
 	PilaCarta* grupos = new PilaCarta[7];
 	bool Ganancia(int dificultad);
 	void Barajar();

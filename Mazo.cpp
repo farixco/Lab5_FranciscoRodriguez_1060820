@@ -45,6 +45,9 @@ void Mazo::Barajar() {
 }
 
 bool Mazo::Mover(int index, int origen, int destino) {
+	if (index > grupos[origen].Count() || index < 0) {
+		throw gcnew System::IndexOutOfRangeException;
+	}
 	PilaCarta* temporal = new PilaCarta;
 	for (int i = 0; i < index; i++) {
 		temporal->Push(grupos[origen].Pop());
