@@ -89,6 +89,20 @@ namespace Lab5FranciscoRodriguez1060820 {
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
+			this->lbxG7 = (gcnew System::Windows::Forms::ListBox());
+			this->lbxG6 = (gcnew System::Windows::Forms::ListBox());
+			this->lbxG5 = (gcnew System::Windows::Forms::ListBox());
+			this->lbxG4 = (gcnew System::Windows::Forms::ListBox());
+			this->lbxG3 = (gcnew System::Windows::Forms::ListBox());
+			this->lbxG2 = (gcnew System::Windows::Forms::ListBox());
+			this->lbxG1 = (gcnew System::Windows::Forms::ListBox());
+			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->btnBarajar = (gcnew System::Windows::Forms::Button());
 			this->lblBarajar = (gcnew System::Windows::Forms::Label());
 			this->lblDificultad = (gcnew System::Windows::Forms::Label());
@@ -101,20 +115,6 @@ namespace Lab5FranciscoRodriguez1060820 {
 			this->lbxOrigen = (gcnew System::Windows::Forms::ListBox());
 			this->btnMover = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->label7 = (gcnew System::Windows::Forms::Label());
-			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->lbxG1 = (gcnew System::Windows::Forms::ListBox());
-			this->lbxG2 = (gcnew System::Windows::Forms::ListBox());
-			this->lbxG3 = (gcnew System::Windows::Forms::ListBox());
-			this->lbxG4 = (gcnew System::Windows::Forms::ListBox());
-			this->lbxG5 = (gcnew System::Windows::Forms::ListBox());
-			this->lbxG6 = (gcnew System::Windows::Forms::ListBox());
-			this->lbxG7 = (gcnew System::Windows::Forms::ListBox());
 			this->tabControl1->SuspendLayout();
 			this->tabPage2->SuspendLayout();
 			this->SuspendLayout();
@@ -175,6 +175,125 @@ namespace Lab5FranciscoRodriguez1060820 {
 			this->tabPage2->Text = L"Ejercicio 2";
 			this->tabPage2->UseVisualStyleBackColor = true;
 			// 
+			// lbxG7
+			// 
+			this->lbxG7->FormattingEnabled = true;
+			this->lbxG7->Location = System::Drawing::Point(628, 302);
+			this->lbxG7->Name = L"lbxG7";
+			this->lbxG7->Size = System::Drawing::Size(56, 186);
+			this->lbxG7->TabIndex = 33;
+			// 
+			// lbxG6
+			// 
+			this->lbxG6->FormattingEnabled = true;
+			this->lbxG6->Location = System::Drawing::Point(541, 302);
+			this->lbxG6->Name = L"lbxG6";
+			this->lbxG6->Size = System::Drawing::Size(56, 186);
+			this->lbxG6->TabIndex = 32;
+			// 
+			// lbxG5
+			// 
+			this->lbxG5->FormattingEnabled = true;
+			this->lbxG5->Location = System::Drawing::Point(462, 302);
+			this->lbxG5->Name = L"lbxG5";
+			this->lbxG5->Size = System::Drawing::Size(56, 186);
+			this->lbxG5->TabIndex = 31;
+			// 
+			// lbxG4
+			// 
+			this->lbxG4->FormattingEnabled = true;
+			this->lbxG4->Location = System::Drawing::Point(378, 302);
+			this->lbxG4->Name = L"lbxG4";
+			this->lbxG4->Size = System::Drawing::Size(56, 186);
+			this->lbxG4->TabIndex = 30;
+			// 
+			// lbxG3
+			// 
+			this->lbxG3->FormattingEnabled = true;
+			this->lbxG3->Location = System::Drawing::Point(278, 302);
+			this->lbxG3->Name = L"lbxG3";
+			this->lbxG3->Size = System::Drawing::Size(56, 186);
+			this->lbxG3->TabIndex = 29;
+			// 
+			// lbxG2
+			// 
+			this->lbxG2->FormattingEnabled = true;
+			this->lbxG2->Location = System::Drawing::Point(174, 302);
+			this->lbxG2->Name = L"lbxG2";
+			this->lbxG2->Size = System::Drawing::Size(56, 186);
+			this->lbxG2->TabIndex = 28;
+			// 
+			// lbxG1
+			// 
+			this->lbxG1->FormattingEnabled = true;
+			this->lbxG1->Location = System::Drawing::Point(72, 302);
+			this->lbxG1->Name = L"lbxG1";
+			this->lbxG1->Size = System::Drawing::Size(56, 186);
+			this->lbxG1->TabIndex = 27;
+			// 
+			// label8
+			// 
+			this->label8->AutoSize = true;
+			this->label8->Location = System::Drawing::Point(647, 259);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(21, 13);
+			this->label8->TabIndex = 26;
+			this->label8->Text = L"G7";
+			// 
+			// label7
+			// 
+			this->label7->AutoSize = true;
+			this->label7->Location = System::Drawing::Point(556, 259);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(21, 13);
+			this->label7->TabIndex = 25;
+			this->label7->Text = L"G6";
+			// 
+			// label6
+			// 
+			this->label6->AutoSize = true;
+			this->label6->Location = System::Drawing::Point(478, 259);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(21, 13);
+			this->label6->TabIndex = 24;
+			this->label6->Text = L"G5";
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Location = System::Drawing::Point(395, 259);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(21, 13);
+			this->label5->TabIndex = 23;
+			this->label5->Text = L"G4";
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Location = System::Drawing::Point(297, 259);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(21, 13);
+			this->label4->TabIndex = 22;
+			this->label4->Text = L"G3";
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Location = System::Drawing::Point(193, 259);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(21, 13);
+			this->label3->TabIndex = 21;
+			this->label3->Text = L"G2";
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Location = System::Drawing::Point(90, 259);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(21, 13);
+			this->label2->TabIndex = 20;
+			this->label2->Text = L"G1";
+			// 
 			// btnBarajar
 			// 
 			this->btnBarajar->Location = System::Drawing::Point(350, 140);
@@ -183,7 +302,6 @@ namespace Lab5FranciscoRodriguez1060820 {
 			this->btnBarajar->TabIndex = 19;
 			this->btnBarajar->Text = L"Barajar";
 			this->btnBarajar->UseVisualStyleBackColor = true;
-			this->btnBarajar->Visible = false;
 			this->btnBarajar->Click += gcnew System::EventHandler(this, &MyForm::btnBarajar_Click);
 			// 
 			// lblBarajar
@@ -292,125 +410,6 @@ namespace Lab5FranciscoRodriguez1060820 {
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Solitario Simple";
 			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(90, 259);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(21, 13);
-			this->label2->TabIndex = 20;
-			this->label2->Text = L"G1";
-			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(193, 259);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(21, 13);
-			this->label3->TabIndex = 21;
-			this->label3->Text = L"G2";
-			// 
-			// label4
-			// 
-			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(297, 259);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(21, 13);
-			this->label4->TabIndex = 22;
-			this->label4->Text = L"G3";
-			// 
-			// label5
-			// 
-			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(395, 259);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(21, 13);
-			this->label5->TabIndex = 23;
-			this->label5->Text = L"G4";
-			// 
-			// label6
-			// 
-			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(478, 259);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(21, 13);
-			this->label6->TabIndex = 24;
-			this->label6->Text = L"G5";
-			// 
-			// label7
-			// 
-			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(556, 259);
-			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(21, 13);
-			this->label7->TabIndex = 25;
-			this->label7->Text = L"G6";
-			// 
-			// label8
-			// 
-			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(647, 259);
-			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(21, 13);
-			this->label8->TabIndex = 26;
-			this->label8->Text = L"G7";
-			// 
-			// lbxG1
-			// 
-			this->lbxG1->FormattingEnabled = true;
-			this->lbxG1->Location = System::Drawing::Point(72, 302);
-			this->lbxG1->Name = L"lbxG1";
-			this->lbxG1->Size = System::Drawing::Size(56, 186);
-			this->lbxG1->TabIndex = 27;
-			// 
-			// lbxG2
-			// 
-			this->lbxG2->FormattingEnabled = true;
-			this->lbxG2->Location = System::Drawing::Point(174, 302);
-			this->lbxG2->Name = L"lbxG2";
-			this->lbxG2->Size = System::Drawing::Size(56, 186);
-			this->lbxG2->TabIndex = 28;
-			// 
-			// lbxG3
-			// 
-			this->lbxG3->FormattingEnabled = true;
-			this->lbxG3->Location = System::Drawing::Point(278, 302);
-			this->lbxG3->Name = L"lbxG3";
-			this->lbxG3->Size = System::Drawing::Size(56, 186);
-			this->lbxG3->TabIndex = 29;
-			// 
-			// lbxG4
-			// 
-			this->lbxG4->FormattingEnabled = true;
-			this->lbxG4->Location = System::Drawing::Point(378, 302);
-			this->lbxG4->Name = L"lbxG4";
-			this->lbxG4->Size = System::Drawing::Size(56, 186);
-			this->lbxG4->TabIndex = 30;
-			// 
-			// lbxG5
-			// 
-			this->lbxG5->FormattingEnabled = true;
-			this->lbxG5->Location = System::Drawing::Point(462, 302);
-			this->lbxG5->Name = L"lbxG5";
-			this->lbxG5->Size = System::Drawing::Size(56, 186);
-			this->lbxG5->TabIndex = 31;
-			// 
-			// lbxG6
-			// 
-			this->lbxG6->FormattingEnabled = true;
-			this->lbxG6->Location = System::Drawing::Point(541, 302);
-			this->lbxG6->Name = L"lbxG6";
-			this->lbxG6->Size = System::Drawing::Size(56, 186);
-			this->lbxG6->TabIndex = 32;
-			// 
-			// lbxG7
-			// 
-			this->lbxG7->FormattingEnabled = true;
-			this->lbxG7->Location = System::Drawing::Point(628, 302);
-			this->lbxG7->Name = L"lbxG7";
-			this->lbxG7->Size = System::Drawing::Size(56, 186);
-			this->lbxG7->TabIndex = 33;
-			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -452,6 +451,83 @@ namespace Lab5FranciscoRodriguez1060820 {
 		}
 		if (valido) {
 			juego->Mover(pos, inxOrg, inxDst);
+			lbxG1->Items->Clear();
+			lbxG2->Items->Clear();
+			lbxG3->Items->Clear();
+			lbxG4->Items->Clear();
+			lbxG5->Items->Clear();
+			lbxG6->Items->Clear();
+			lbxG7->Items->Clear();
+			for (int i = 0; i < juego->grupos[0].Count(); i++) {
+				String^ ex = Convert::ToString(juego->grupos[0].GetItem(i)->Numero);
+				if (juego->grupos[0].GetItem(i)->Color) {
+					ex += "N";
+				}
+				else {
+					ex += "R";
+				}
+				lbxG1->Items->Add(ex);
+			}
+			for (int i = 0; i < juego->grupos[1].Count(); i++) {
+				String^ ex = Convert::ToString(juego->grupos[1].GetItem(i)->Numero);
+				if (juego->grupos[1].GetItem(i)->Color) {
+					ex += "N";
+				}
+				else {
+					ex += "R";
+				}
+				lbxG2->Items->Add(ex);
+			}
+			for (int i = 0; i < juego->grupos[2].Count(); i++) {
+				String^ ex = Convert::ToString(juego->grupos[2].GetItem(i)->Numero);
+				if (juego->grupos[2].GetItem(i)->Color) {
+					ex += "N";
+				}
+				else {
+					ex += "R";
+				}
+				lbxG3->Items->Add(ex);
+			}
+			for (int i = 0; i < juego->grupos[3].Count(); i++) {
+				String^ ex = Convert::ToString(juego->grupos[3].GetItem(i)->Numero);
+				if (juego->grupos[3].GetItem(i)->Color) {
+					ex += "N";
+				}
+				else {
+					ex += "R";
+				}
+				lbxG4->Items->Add(ex);
+			}
+			for (int i = 0; i < juego->grupos[4].Count(); i++) {
+				String^ ex = Convert::ToString(juego->grupos[4].GetItem(i)->Numero);
+				if (juego->grupos[4].GetItem(i)->Color) {
+					ex += "N";
+				}
+				else {
+					ex += "R";
+				}
+				lbxG5->Items->Add(ex);
+			}
+			for (int i = 0; i < juego->grupos[5].Count(); i++) {
+				String^ ex = Convert::ToString(juego->grupos[5].GetItem(i)->Numero);
+				if (juego->grupos[5].GetItem(i)->Color) {
+					ex += "N";
+				}
+				else {
+					ex += "R";
+				}
+				lbxG6->Items->Add(ex);
+			}
+			for (int i = 0; i < juego->grupos[6].Count(); i++) {
+				String^ ex = Convert::ToString(juego->grupos[6].GetItem(i)->Numero);
+				if (juego->grupos[6].GetItem(i)->Color) {
+					ex += "N";
+				}
+				else {
+					ex += "R";
+				}
+				lbxG7->Items->Add(ex);
+			}
 			if (juego->Ganancia(diff)) {
 				MessageBox::Show("Enhorabuena! Ha ganado el juego!");
 			}
@@ -469,6 +545,83 @@ private: System::Void btnBarajar_Click(System::Object^ sender, System::EventArgs
 	lbxOrigen->Visible = true;
 	txtIndice->Visible = true;
 	btnMover->Visible = true;
+	lbxG1->Items->Clear();
+	lbxG2->Items->Clear();
+	lbxG3->Items->Clear();
+	lbxG4->Items->Clear();
+	lbxG5->Items->Clear();
+	lbxG6->Items->Clear();
+	lbxG7->Items->Clear();
+	for (int i = 0; i < juego->grupos[0].Count(); i++) {
+		String^ ex = Convert::ToString(juego->grupos[0].GetItem(i)->Numero);
+		if (juego->grupos[0].GetItem(i)->Color) {
+			ex += "N";
+		}
+		else {
+			ex += "R";
+		}
+		lbxG1->Items->Add(ex);
+	}
+	for (int i = 0; i < juego->grupos[1].Count(); i++) {
+		String^ ex = Convert::ToString(juego->grupos[1].GetItem(i)->Numero);
+		if (juego->grupos[1].GetItem(i)->Color) {
+			ex += "N";
+		}
+		else {
+			ex += "R";
+		}
+		lbxG2->Items->Add(ex);
+	}
+	for (int i = 0; i < juego->grupos[2].Count(); i++) {
+		String^ ex = Convert::ToString(juego->grupos[2].GetItem(i)->Numero);
+		if (juego->grupos[2].GetItem(i)->Color) {
+			ex += "N";
+		}
+		else {
+			ex += "R";
+		}
+		lbxG3->Items->Add(ex);
+	}
+	for (int i = 0; i < juego->grupos[3].Count(); i++) {
+		String^ ex = Convert::ToString(juego->grupos[3].GetItem(i)->Numero);
+		if (juego->grupos[3].GetItem(i)->Color) {
+			ex += "N";
+		}
+		else {
+			ex += "R";
+		}
+		lbxG4->Items->Add(ex);
+	}
+	for (int i = 0; i < juego->grupos[4].Count(); i++) {
+		String^ ex = Convert::ToString(juego->grupos[4].GetItem(i)->Numero);
+		if (juego->grupos[4].GetItem(i)->Color) {
+			ex += "N";
+		}
+		else {
+			ex += "R";
+		}
+		lbxG5->Items->Add(ex);
+	}
+	for (int i = 0; i < juego->grupos[5].Count(); i++) {
+		String^ ex = Convert::ToString(juego->grupos[5].GetItem(i)->Numero);
+		if (juego->grupos[5].GetItem(i)->Color) {
+			ex += "N";
+		}
+		else {
+			ex += "R";
+		}
+		lbxG6->Items->Add(ex);
+	}
+	for (int i = 0; i < juego->grupos[6].Count(); i++) {
+		String^ ex = Convert::ToString(juego->grupos[6].GetItem(i)->Numero);
+		if (juego->grupos[6].GetItem(i)->Color) {
+			ex += "N";
+		}
+		else {
+			ex += "R";
+		}
+		lbxG7->Items->Add(ex);
+	}
 }
 };
 }

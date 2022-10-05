@@ -22,5 +22,6 @@ public:
 	/// </summary>
 	/// <returns></returns>
 	bool Validez();
+	Node* GetItem(int index);
 };
 

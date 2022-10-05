@@ -36,7 +36,7 @@ void Mazo::Barajar() {
 			else {
 				grupos[i].Push(chaosTemp->Pop());
 			}
-			if (grupos[i].Validez() != true) {
+			if (grupos[i].Validez() != true && mano->Count() != 0) {
 				chaosTemp->Push(grupos[i].Pop());
 				j++;
 			}
