@@ -26,3 +26,17 @@ PilaCarta::Node* PilaCarta::Pop() {
 		return iterador;
 	}
 }
+
+int PilaCarta::IndexOf(int num, bool col) {
+	int indice = -1;
+	Node* iterador = new Node;
+	iterador = header;
+	for (int i = 0; i < this->Count(); i++) {
+		if (iterador->Numero == num && iterador->Color == col) {
+			indice = i;
+			i = this->Count() + 1;
+		}
+		iterador = iterador->Next;
+	}
+	return indice;
+}

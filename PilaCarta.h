@@ -15,5 +15,6 @@ public:
 	void Push(int num, bool col);
 	Node* Pop();
 	int IndexOf(int num, bool col);
+	int Count();
 };
 
