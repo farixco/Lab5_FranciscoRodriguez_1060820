@@ -14,3 +14,15 @@ void PilaCarta::Push(int num, bool col) {
 		header = nuevo;
 	}
 }
+
+PilaCarta::Node* PilaCarta::Pop() {
+	Node* iterador = new Node;
+	if (header == nullptr) {
+		return nullptr;
+	}
+	else {
+		iterador = header;
+		header = header->Next;
+		return iterador;
+	}
+}

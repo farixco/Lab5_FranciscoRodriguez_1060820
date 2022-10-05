@@ -13,7 +13,7 @@ private:
 	Node* header = nullptr;
 public:
 	void Push(int num, bool col);
-	void Pop();
+	Node* Pop();
 	int IndexOf(int num, bool col);
 };
 
