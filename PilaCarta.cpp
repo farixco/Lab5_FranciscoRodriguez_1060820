@@ -40,3 +40,19 @@ int PilaCarta::IndexOf(int num, bool col) {
 	}
 	return indice;
 }
+
+int PilaCarta::Count() {
+	if (header == nullptr) {
+		return 0;
+	}
+	else {
+		Node* iterador = new Node;
+		iterador = header;
+		int contador = 1;
+		while (iterador->Next != nullptr) {
+			iterador = iterador->Next;
+			contador++;
+		}
+		return contador;
+	}
+}
