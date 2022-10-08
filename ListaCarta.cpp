@@ -37,3 +37,15 @@ int ListaCarta::Count() {
 		return contador;
 	}
 }
+
+ListaCarta::Node* ListaCarta::GetItem(int index) {
+	if (index < 0 || index > this->Count()) {
+		throw gcnew System::IndexOutOfRangeException();
+	}
+	Node* iterador = new Node;
+	iterador = header;
+	for (int i = 0; i < index; i++) {
+		iterador = iterador->Next;
+	}
+	return iterador;
+}
