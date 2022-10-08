@@ -22,3 +22,18 @@ void ListaCarta::Clear() {
 	header = nullptr;
 }
 
+int ListaCarta::Count() {
+	if (header == nullptr) {
+		return 0;
+	}
+	else {
+		Node* iterador = new Node;
+		iterador = header;
+		int contador = 1;
+		while (iterador->Next != nullptr) {
+			iterador = iterador->Next;
+			contador++;
+		}
+		return contador;
+	}
+}
