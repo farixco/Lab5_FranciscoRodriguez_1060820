@@ -49,3 +49,15 @@ ListaCarta::Node* ListaCarta::GetItem(int index) {
 	}
 	return iterador;
 }
+
+void ListaCarta::RemoveAt(int index) {
+	if (index < 0 || index > this->Count()) {
+		throw gcnew System::IndexOutOfRangeException();
+	}
+	Node* iterador = new Node;
+	iterador = header;
+	for (int i = 0; i < index - 1; i++) {
+		iterador = iterador->Next;
+	}
+	iterador->Next = iterador->Next->Next;
+}
