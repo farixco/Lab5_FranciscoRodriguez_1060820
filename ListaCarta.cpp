@@ -17,3 +17,8 @@ void ListaCarta::Add(int num, bool col) {
 		nuevo->Color = col;
 	}
 }
+
+void ListaCarta::Clear() {
+	header = nullptr;
+}
+
