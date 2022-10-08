@@ -18,19 +18,42 @@ void Mazo::Barajar() {
 		while (grupos[i].Count() != 0) {
 			grupos[i].Pop();
 		}
-
+	}
 		/// función para barajar el mazo empieza con una lista de 52 cartas (el deck completo)
 		/// que procederá a ser cambiada de forma aleatoria y de ahí voy a añadir secuencial en los grupos en sí
-	}
-
-	PilaCarta* mano = new PilaCarta;
+		
+	ListaCarta* mano = new ListaCarta;
 	for (int i = 1; i < 14; i++) {
 		for (int j = 0; j < 4; j++) {
 			if (j % 2 == 0) {
-				mano->Push(i, true);
+				mano->Add(i, true);
 			}
 			else {
-				mano->Push(i, false);
+				mano->Add(i, false);
+			}
+		}
+	}
+
+	/// inspirado por https://coderscat.com/random-number-and-card-shuffling-algorithm/
+	int rnd;
+	/// <summary>
+	/// CARTA 53 (indice base-0 52) ES ALMACÉN TEMPORAL
+	/// </summary>
+	mano->Add(-1, false);
+	for (int i = 0; i < 52; i++) {
+		rnd = rand() % 51 + 1;
+		mano->SetItem(52, mano->GetItem(rnd));
+		mano->SetItem(rnd, mano->GetItem(i));
+		mano->SetItem(i, mano->GetItem(52));
+	}
+
+	for (int i = 0; i < 7; i++) {
+		for (int j = 7 - i; j > 0; j--) {
+			rnd = rand() % 51 + 1;
+			grupos[i].Push(mano->GetItem(rnd)->Numero,mano->GetItem(rnd)->Color);
+			if (!grupos[i].Validez()) {
+				grupos[i].Pop();
+				j++;
 			}
 		}
 	}

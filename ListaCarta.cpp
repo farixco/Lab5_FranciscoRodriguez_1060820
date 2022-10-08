@@ -61,3 +61,16 @@ void ListaCarta::RemoveAt(int index) {
 	}
 	iterador->Next = iterador->Next->Next;
 }
+
+void ListaCarta::SetItem(int index, ListaCarta::Node* carta) {
+	if (index < 0 || index > this->Count()) {
+		throw gcnew System::IndexOutOfRangeException();
+	}
+	Node* iterador = new Node;
+	iterador = header;
+	for (int i = 0; i < index; i++) {
+		iterador = iterador->Next;
+	}
+	iterador->Numero = carta->Numero;
+	iterador->Color = carta->Color;
+}

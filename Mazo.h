@@ -1,5 +1,6 @@
 #pragma once
 #include "PilaCarta.h"
+#include "ListaCarta.h"
 class Mazo
 {
 public:

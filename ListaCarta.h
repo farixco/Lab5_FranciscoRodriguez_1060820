@@ -13,6 +13,7 @@ public:
 	void Clear();
 	int Count();
 	Node* GetItem(int index);
+	void SetItem(int index, Node* carta);
 	void RemoveAt(int index);
 };
 
