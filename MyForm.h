@@ -115,6 +115,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 	private: System::Windows::Forms::Label^ lblIndexOf;
 	private: System::Windows::Forms::Label^ lblGetItem;
 	private: System::Windows::Forms::Label^ lblLastIndexOf;
+private: System::Windows::Forms::Label^ lblRemove;
 
 	private:
 		/// <summary>
@@ -131,6 +132,8 @@ namespace Lab5FranciscoRodriguez1060820 {
 		{
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
+			this->lblRemove = (gcnew System::Windows::Forms::Label());
+			this->lblLastIndexOf = (gcnew System::Windows::Forms::Label());
 			this->lblGetItem = (gcnew System::Windows::Forms::Label());
 			this->lblIndexOf = (gcnew System::Windows::Forms::Label());
 			this->lblContains = (gcnew System::Windows::Forms::Label());
@@ -199,7 +202,6 @@ namespace Lab5FranciscoRodriguez1060820 {
 			this->lbxOrigen = (gcnew System::Windows::Forms::ListBox());
 			this->btnMover = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->lblLastIndexOf = (gcnew System::Windows::Forms::Label());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->tabPage2->SuspendLayout();
@@ -217,6 +219,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 			// 
 			// tabPage1
 			// 
+			this->tabPage1->Controls->Add(this->lblRemove);
 			this->tabPage1->Controls->Add(this->lblLastIndexOf);
 			this->tabPage1->Controls->Add(this->lblGetItem);
 			this->tabPage1->Controls->Add(this->lblIndexOf);
@@ -263,6 +266,24 @@ namespace Lab5FranciscoRodriguez1060820 {
 			this->tabPage1->TabIndex = 0;
 			this->tabPage1->Text = L"Ejercicio 1";
 			this->tabPage1->UseVisualStyleBackColor = true;
+			// 
+			// lblRemove
+			// 
+			this->lblRemove->AutoSize = true;
+			this->lblRemove->Location = System::Drawing::Point(218, 389);
+			this->lblRemove->Name = L"lblRemove";
+			this->lblRemove->Size = System::Drawing::Size(10, 13);
+			this->lblRemove->TabIndex = 39;
+			this->lblRemove->Text = L"-";
+			// 
+			// lblLastIndexOf
+			// 
+			this->lblLastIndexOf->AutoSize = true;
+			this->lblLastIndexOf->Location = System::Drawing::Point(215, 344);
+			this->lblLastIndexOf->Name = L"lblLastIndexOf";
+			this->lblLastIndexOf->Size = System::Drawing::Size(10, 13);
+			this->lblLastIndexOf->TabIndex = 38;
+			this->lblLastIndexOf->Text = L"-";
 			// 
 			// lblGetItem
 			// 
@@ -393,6 +414,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 			this->btnRemoveAt->TabIndex = 21;
 			this->btnRemoveAt->Text = L"Quitar de";
 			this->btnRemoveAt->UseVisualStyleBackColor = true;
+			this->btnRemoveAt->Click += gcnew System::EventHandler(this, &MyForm::btnRemoveAt_Click);
 			// 
 			// btnRemove
 			// 
@@ -402,6 +424,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 			this->btnRemove->TabIndex = 20;
 			this->btnRemove->Text = L"Quitar";
 			this->btnRemove->UseVisualStyleBackColor = true;
+			this->btnRemove->Click += gcnew System::EventHandler(this, &MyForm::btnRemove_Click);
 			// 
 			// btnLastIndexOf
 			// 
@@ -898,15 +921,6 @@ namespace Lab5FranciscoRodriguez1060820 {
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Solitario Simple";
 			// 
-			// lblLastIndexOf
-			// 
-			this->lblLastIndexOf->AutoSize = true;
-			this->lblLastIndexOf->Location = System::Drawing::Point(215, 344);
-			this->lblLastIndexOf->Name = L"lblLastIndexOf";
-			this->lblLastIndexOf->Size = System::Drawing::Size(10, 13);
-			this->lblLastIndexOf->TabIndex = 38;
-			this->lblLastIndexOf->Text = L"-";
-			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -1196,6 +1210,33 @@ private: System::Void btnLastIndexOf_Click(System::Object^ sender, System::Event
 	try {
 		item = Convert::ToInt32(txtLastIndexOf->Text);
 		lblIndexOf->Text = Convert::ToString(lista->LastIndexOf(item));
+	}
+	catch (Exception^ ex) {
+		MessageBox::Show("Valor inválido");
+	}
+}
+private: System::Void btnRemove_Click(System::Object^ sender, System::EventArgs^ e) {
+	int item;
+	try {
+		item = Convert::ToInt32(txtRemove->Text);
+		if (lista->Remove(item)) {
+			lblRemove->Text = "T";
+		}
+		else {
+			lblRemove->Text = "F";
+		}
+		actualizarInterfazLista();
+	}
+	catch (Exception^ ex) {
+		MessageBox::Show("Valor inválido");
+	}
+}
+private: System::Void btnRemoveAt_Click(System::Object^ sender, System::EventArgs^ e) {
+	int index;
+	try {
+		index = Convert::ToInt32(txtRemoveAt->Text);
+		lista->RemoveAt(index);
+		actualizarInterfazLista();
 	}
 	catch (Exception^ ex) {
 		MessageBox::Show("Valor inválido");
