@@ -72,6 +72,8 @@ namespace Lab5FranciscoRodriguez1060820 {
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Label^ lblMazo;
+	private: System::Windows::Forms::Label^ label9;
 
 	private:
 		/// <summary>
@@ -89,6 +91,8 @@ namespace Lab5FranciscoRodriguez1060820 {
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
+			this->lblMazo = (gcnew System::Windows::Forms::Label());
+			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->lbxG7 = (gcnew System::Windows::Forms::ListBox());
 			this->lbxG6 = (gcnew System::Windows::Forms::ListBox());
 			this->lbxG5 = (gcnew System::Windows::Forms::ListBox());
@@ -141,6 +145,8 @@ namespace Lab5FranciscoRodriguez1060820 {
 			// 
 			// tabPage2
 			// 
+			this->tabPage2->Controls->Add(this->lblMazo);
+			this->tabPage2->Controls->Add(this->label9);
 			this->tabPage2->Controls->Add(this->lbxG7);
 			this->tabPage2->Controls->Add(this->lbxG6);
 			this->tabPage2->Controls->Add(this->lbxG5);
@@ -174,6 +180,24 @@ namespace Lab5FranciscoRodriguez1060820 {
 			this->tabPage2->TabIndex = 1;
 			this->tabPage2->Text = L"Ejercicio 2";
 			this->tabPage2->UseVisualStyleBackColor = true;
+			// 
+			// lblMazo
+			// 
+			this->lblMazo->AutoSize = true;
+			this->lblMazo->Location = System::Drawing::Point(690, 40);
+			this->lblMazo->Name = L"lblMazo";
+			this->lblMazo->Size = System::Drawing::Size(10, 13);
+			this->lblMazo->TabIndex = 35;
+			this->lblMazo->Text = L"-";
+			// 
+			// label9
+			// 
+			this->label9->AutoSize = true;
+			this->label9->Location = System::Drawing::Point(647, 40);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(36, 13);
+			this->label9->TabIndex = 34;
+			this->label9->Text = L"Mazo:";
 			// 
 			// lbxG7
 			// 
@@ -383,7 +407,10 @@ namespace Lab5FranciscoRodriguez1060820 {
 			// lbxOrigen
 			// 
 			this->lbxOrigen->FormattingEnabled = true;
-			this->lbxOrigen->Items->AddRange(gcnew cli::array< System::Object^  >(7) { L"G1", L"G2", L"G3", L"G4", L"G5", L"G6", L"G7" });
+			this->lbxOrigen->Items->AddRange(gcnew cli::array< System::Object^  >(8) {
+				L"G1", L"G2", L"G3", L"G4", L"G5", L"G6", L"G7",
+					L"Mazo"
+			});
 			this->lbxOrigen->Location = System::Drawing::Point(90, 41);
 			this->lbxOrigen->Name = L"lbxOrigen";
 			this->lbxOrigen->Size = System::Drawing::Size(75, 147);
@@ -434,7 +461,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 			lbxG5->Items->Clear();
 			lbxG6->Items->Clear();
 			lbxG7->Items->Clear();
-			for (int i = 0; i < juego->enJuego[0].Count(); i++) {
+			for (int i = juego->enJuego[0].Count() - 1; i > -1; i--) {
 				String^ ex = Convert::ToString(juego->enJuego[0].GetItem(i)->Numero);
 				if (juego->enJuego[0].GetItem(i)->Color) {
 					ex += "N";
@@ -444,7 +471,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 				}
 				lbxG1->Items->Add(ex);
 			}
-			for (int i = 0; i < juego->enJuego[1].Count(); i++) {
+			for (int i = juego->enJuego[1].Count() - 1; i > -1; i--) {
 				String^ ex = Convert::ToString(juego->enJuego[1].GetItem(i)->Numero);
 				if (juego->enJuego[1].GetItem(i)->Color) {
 					ex += "N";
@@ -454,7 +481,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 				}
 				lbxG2->Items->Add(ex);
 			}
-			for (int i = 0; i < juego->enJuego[2].Count(); i++) {
+			for (int i = juego->enJuego[2].Count() - 1; i > -1; i--) {
 				String^ ex = Convert::ToString(juego->enJuego[2].GetItem(i)->Numero);
 				if (juego->enJuego[2].GetItem(i)->Color) {
 					ex += "N";
@@ -464,7 +491,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 				}
 				lbxG3->Items->Add(ex);
 			}
-			for (int i = 0; i < juego->enJuego[3].Count(); i++) {
+			for (int i = juego->enJuego[3].Count() - 1; i > -1; i--) {
 				String^ ex = Convert::ToString(juego->enJuego[3].GetItem(i)->Numero);
 				if (juego->enJuego[3].GetItem(i)->Color) {
 					ex += "N";
@@ -474,7 +501,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 				}
 				lbxG4->Items->Add(ex);
 			}
-			for (int i = 0; i < juego->enJuego[4].Count(); i++) {
+			for (int i = juego->enJuego[4].Count() - 1; i > -1; i--) {
 				String^ ex = Convert::ToString(juego->enJuego[4].GetItem(i)->Numero);
 				if (juego->enJuego[4].GetItem(i)->Color) {
 					ex += "N";
@@ -484,7 +511,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 				}
 				lbxG5->Items->Add(ex);
 			}
-			for (int i = 0; i < juego->enJuego[5].Count(); i++) {
+			for (int i = juego->enJuego[5].Count() - 1; i > -1; i--) {
 				String^ ex = Convert::ToString(juego->enJuego[5].GetItem(i)->Numero);
 				if (juego->enJuego[5].GetItem(i)->Color) {
 					ex += "N";
@@ -494,7 +521,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 				}
 				lbxG6->Items->Add(ex);
 			}
-			for (int i = 0; i < juego->enJuego[6].Count(); i++) {
+			for (int i = juego->enJuego[6].Count() - 1; i > -1; i--) {
 				String^ ex = Convert::ToString(juego->enJuego[6].GetItem(i)->Numero);
 				if (juego->enJuego[6].GetItem(i)->Color) {
 					ex += "N";
@@ -503,6 +530,13 @@ namespace Lab5FranciscoRodriguez1060820 {
 					ex += "R";
 				}
 				lbxG7->Items->Add(ex);
+			}
+			String^ mz = Convert::ToString(juego->mazo->GetItem(0)->Numero);
+			if (juego->mazo->GetItem(0)->Color) {
+				mz += "N";
+			}
+			else {
+				mz += "R";
 			}
 		}
 	private: System::Void btnMover_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -513,8 +547,11 @@ namespace Lab5FranciscoRodriguez1060820 {
 		switch (lbxDificultad->SelectedIndex)
 		{
 		case 0: diff = 3;
+			break;
 		case 1: diff = 5;
+			break;
 		case 2: diff = 7;
+			break;
 		default:
 			diff = -1;
 			valido = false;

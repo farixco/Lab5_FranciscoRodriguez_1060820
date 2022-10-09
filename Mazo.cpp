@@ -89,3 +89,16 @@ bool Mazo::Mover(int index, int origen, int destino) {
 	}
 	return movida;
 }
+
+bool Mazo::Mover(int destino) {
+	enJuego[destino].Push(mazo->Pop());
+	bool movida;
+	if (enJuego[destino].Validez()) {
+		movida = true;
+	}
+	else {
+		movida = false;
+		mazo->Push(enJuego[destino].Pop());
+	}
+	return movida;
+}

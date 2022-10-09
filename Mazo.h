@@ -10,5 +10,11 @@ public:
 	bool Ganancia(int dificultad);
 	void Barajar();
 	bool Mover(int index, int origen, int destino);
+	/// <summary>
+	///  versión de Mover que se utiliza cuando se mueve desde el mazo
+	/// </summary>
+	/// <param name="destino"></param>
+	/// <returns></returns>
+	bool Mover(int destino);
 };
 
