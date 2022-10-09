@@ -5,7 +5,7 @@
 bool Mazo::Ganancia(int dificultad) {
 	bool gano = false;
 	for (int i = 0; i < 7; i++) {
-		if (grupos[i].Validez() == true && grupos[i].Count() == dificultad) {
+		if (enJuego[i].Validez() == true && enJuego[i].Count() == dificultad) {
 			gano = true;
 		}
 	}
@@ -33,7 +33,6 @@ void Mazo::Barajar() {
 			}
 		}
 	}
-
 	/// inspirado por https://coderscat.com/random-number-and-card-shuffling-algorithm/
 	int rnd;
 	/// <summary>
@@ -41,45 +40,44 @@ void Mazo::Barajar() {
 	/// </summary>
 	mano->Add(-1, false);
 	for (int i = 0; i < 52; i++) {
-		rnd = rand() % 51 + 1;
+		rnd = (rand() % 52);
 		mano->SetItem(52, mano->GetItem(rnd));
 		mano->SetItem(rnd, mano->GetItem(i));
 		mano->SetItem(i, mano->GetItem(52));
 	}
+	for (int i = 0; i < 52; i++) {
+		mazo->Push(mano->GetItem(i)->Numero,mano->GetItem(i)->Color);
+	}
 
 	for (int i = 0; i < 7; i++) {
-		for (int j = 7 - i; j > 0; j--) {
-			rnd = rand() % 51 + 1;
-			grupos[i].Push(mano->GetItem(rnd)->Numero,mano->GetItem(rnd)->Color);
-			if (!grupos[i].Validez()) {
-				grupos[i].Pop();
-				j++;
-			}
+		for (int j = 6 - i; j > 0; j--) {
+			grupos[i].Push(mazo->Pop());
 		}
+		enJuego[i].Push(mazo->Pop());
 	}
 }
 
 bool Mazo::Mover(int index, int origen, int destino) {
-	if (index > grupos[origen].Count() || index < 0) {
+	if (index > enJuego[origen].Count() || index < 0) {
 		throw gcnew System::IndexOutOfRangeException;
 	}
 	PilaCarta* temporal = new PilaCarta;
 	for (int i = 0; i < index; i++) {
-		temporal->Push(grupos[origen].Pop());
+		temporal->Push(enJuego[origen].Pop());
 	}
 	for (int i = 0; i < index; i++) {
-		grupos[destino].Push(temporal->Pop());
+		enJuego[destino].Push(temporal->Pop());
 	}
 	bool movida;
-	if (grupos[destino].Validez() == true) {
+	if (enJuego[destino].Validez() == true) {
 		movida = true;
 	}
 	else {
 		for (int i = 0; i < index; i++) {
-			temporal->Push(grupos[destino].Pop());
+			temporal->Push(enJuego[destino].Pop());
 		}
 		for (int i = 0; i < index; i++) {
-			grupos[origen].Push(temporal->Pop());
+			enJuego[origen].Push(temporal->Pop());
 		}
 		movida = false;
 	}

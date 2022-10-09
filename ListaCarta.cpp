@@ -8,13 +8,14 @@ void ListaCarta::Add(int num, bool col) {
 		header = nuevo;
 	}
 	else {
-		nuevo = header;
-		while (nuevo->Next != nullptr) {
-			nuevo = nuevo->Next;
+		Node* iterador = header;
+		while (iterador->Next != nullptr) {
+			iterador = iterador->Next;
 		}
-		nuevo->Next = nullptr;
 		nuevo->Numero = num;
 		nuevo->Color = col;
+		nuevo->Next = nullptr;
+		iterador->Next = nuevo;
 	}
 }
 
