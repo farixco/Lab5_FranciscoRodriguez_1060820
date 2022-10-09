@@ -1,5 +1,6 @@
 #pragma once
 #include "Mazo.h"
+#include "List.h"
 namespace Lab5FranciscoRodriguez1060820 {
 
 	using namespace System;
@@ -75,6 +76,41 @@ namespace Lab5FranciscoRodriguez1060820 {
 	private: System::Windows::Forms::Label^ lblMazo;
 	private: System::Windows::Forms::Label^ label9;
 	private: System::Windows::Forms::Button^ btnDescMaz;
+	private: System::Windows::Forms::TextBox^ txtLastIndexOf;
+	private: System::Windows::Forms::TextBox^ txtSetItemItem;
+	private: System::Windows::Forms::TextBox^ txtSetItemIndex;
+	private: System::Windows::Forms::TextBox^ txtGetItem;
+	private: System::Windows::Forms::TextBox^ txtInsertItem;
+	private: System::Windows::Forms::TextBox^ txtInsertIndex;
+	private: System::Windows::Forms::TextBox^ txtIndexOf;
+	private: System::Windows::Forms::TextBox^ txtContains;
+	private: System::Windows::Forms::TextBox^ txtAdd;
+	private: System::Windows::Forms::Button^ btnRemoveAt;
+	private: System::Windows::Forms::Button^ btnRemove;
+	private: System::Windows::Forms::Button^ btnLastIndexOf;
+	private: System::Windows::Forms::Button^ btnSetItem;
+	private: System::Windows::Forms::Button^ btnGetItem;
+	private: System::Windows::Forms::Button^ btnInsert;
+	private: System::Windows::Forms::Button^ btnIndexOf;
+	private: System::Windows::Forms::Button^ btnContains;
+	private: System::Windows::Forms::Button^ btnCount;
+	private: System::Windows::Forms::Button^ btnClear;
+	private: System::Windows::Forms::Button^ btnAdd;
+	private: System::Windows::Forms::Label^ label20;
+	private: System::Windows::Forms::Label^ label19;
+	private: System::Windows::Forms::Label^ label18;
+	private: System::Windows::Forms::Label^ label17;
+	private: System::Windows::Forms::Label^ label16;
+	private: System::Windows::Forms::Label^ label15;
+	private: System::Windows::Forms::Label^ label14;
+	private: System::Windows::Forms::Label^ label13;
+	private: System::Windows::Forms::Label^ label12;
+	private: System::Windows::Forms::Label^ label11;
+	private: System::Windows::Forms::Label^ label10;
+	private: System::Windows::Forms::ListBox^ lbxLista;
+	private: System::Windows::Forms::TextBox^ txtRemoveAt;
+	private: System::Windows::Forms::TextBox^ txtRemove;
+	private: System::Windows::Forms::Label^ lblCount;
 
 	private:
 		/// <summary>
@@ -91,6 +127,40 @@ namespace Lab5FranciscoRodriguez1060820 {
 		{
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
+			this->lbxLista = (gcnew System::Windows::Forms::ListBox());
+			this->txtRemoveAt = (gcnew System::Windows::Forms::TextBox());
+			this->txtRemove = (gcnew System::Windows::Forms::TextBox());
+			this->txtLastIndexOf = (gcnew System::Windows::Forms::TextBox());
+			this->txtSetItemItem = (gcnew System::Windows::Forms::TextBox());
+			this->txtSetItemIndex = (gcnew System::Windows::Forms::TextBox());
+			this->txtGetItem = (gcnew System::Windows::Forms::TextBox());
+			this->txtInsertItem = (gcnew System::Windows::Forms::TextBox());
+			this->txtInsertIndex = (gcnew System::Windows::Forms::TextBox());
+			this->txtIndexOf = (gcnew System::Windows::Forms::TextBox());
+			this->txtContains = (gcnew System::Windows::Forms::TextBox());
+			this->txtAdd = (gcnew System::Windows::Forms::TextBox());
+			this->btnRemoveAt = (gcnew System::Windows::Forms::Button());
+			this->btnRemove = (gcnew System::Windows::Forms::Button());
+			this->btnLastIndexOf = (gcnew System::Windows::Forms::Button());
+			this->btnSetItem = (gcnew System::Windows::Forms::Button());
+			this->btnGetItem = (gcnew System::Windows::Forms::Button());
+			this->btnInsert = (gcnew System::Windows::Forms::Button());
+			this->btnIndexOf = (gcnew System::Windows::Forms::Button());
+			this->btnContains = (gcnew System::Windows::Forms::Button());
+			this->btnCount = (gcnew System::Windows::Forms::Button());
+			this->btnClear = (gcnew System::Windows::Forms::Button());
+			this->btnAdd = (gcnew System::Windows::Forms::Button());
+			this->label20 = (gcnew System::Windows::Forms::Label());
+			this->label19 = (gcnew System::Windows::Forms::Label());
+			this->label18 = (gcnew System::Windows::Forms::Label());
+			this->label17 = (gcnew System::Windows::Forms::Label());
+			this->label16 = (gcnew System::Windows::Forms::Label());
+			this->label15 = (gcnew System::Windows::Forms::Label());
+			this->label14 = (gcnew System::Windows::Forms::Label());
+			this->label13 = (gcnew System::Windows::Forms::Label());
+			this->label12 = (gcnew System::Windows::Forms::Label());
+			this->label11 = (gcnew System::Windows::Forms::Label());
+			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
 			this->btnDescMaz = (gcnew System::Windows::Forms::Button());
 			this->lblMazo = (gcnew System::Windows::Forms::Label());
@@ -121,7 +191,9 @@ namespace Lab5FranciscoRodriguez1060820 {
 			this->lbxOrigen = (gcnew System::Windows::Forms::ListBox());
 			this->btnMover = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->lblCount = (gcnew System::Windows::Forms::Label());
 			this->tabControl1->SuspendLayout();
+			this->tabPage1->SuspendLayout();
 			this->tabPage2->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -137,6 +209,41 @@ namespace Lab5FranciscoRodriguez1060820 {
 			// 
 			// tabPage1
 			// 
+			this->tabPage1->Controls->Add(this->lblCount);
+			this->tabPage1->Controls->Add(this->lbxLista);
+			this->tabPage1->Controls->Add(this->txtRemoveAt);
+			this->tabPage1->Controls->Add(this->txtRemove);
+			this->tabPage1->Controls->Add(this->txtLastIndexOf);
+			this->tabPage1->Controls->Add(this->txtSetItemItem);
+			this->tabPage1->Controls->Add(this->txtSetItemIndex);
+			this->tabPage1->Controls->Add(this->txtGetItem);
+			this->tabPage1->Controls->Add(this->txtInsertItem);
+			this->tabPage1->Controls->Add(this->txtInsertIndex);
+			this->tabPage1->Controls->Add(this->txtIndexOf);
+			this->tabPage1->Controls->Add(this->txtContains);
+			this->tabPage1->Controls->Add(this->txtAdd);
+			this->tabPage1->Controls->Add(this->btnRemoveAt);
+			this->tabPage1->Controls->Add(this->btnRemove);
+			this->tabPage1->Controls->Add(this->btnLastIndexOf);
+			this->tabPage1->Controls->Add(this->btnSetItem);
+			this->tabPage1->Controls->Add(this->btnGetItem);
+			this->tabPage1->Controls->Add(this->btnInsert);
+			this->tabPage1->Controls->Add(this->btnIndexOf);
+			this->tabPage1->Controls->Add(this->btnContains);
+			this->tabPage1->Controls->Add(this->btnCount);
+			this->tabPage1->Controls->Add(this->btnClear);
+			this->tabPage1->Controls->Add(this->btnAdd);
+			this->tabPage1->Controls->Add(this->label20);
+			this->tabPage1->Controls->Add(this->label19);
+			this->tabPage1->Controls->Add(this->label18);
+			this->tabPage1->Controls->Add(this->label17);
+			this->tabPage1->Controls->Add(this->label16);
+			this->tabPage1->Controls->Add(this->label15);
+			this->tabPage1->Controls->Add(this->label14);
+			this->tabPage1->Controls->Add(this->label13);
+			this->tabPage1->Controls->Add(this->label12);
+			this->tabPage1->Controls->Add(this->label11);
+			this->tabPage1->Controls->Add(this->label10);
 			this->tabPage1->Location = System::Drawing::Point(4, 22);
 			this->tabPage1->Name = L"tabPage1";
 			this->tabPage1->Padding = System::Windows::Forms::Padding(3);
@@ -144,6 +251,292 @@ namespace Lab5FranciscoRodriguez1060820 {
 			this->tabPage1->TabIndex = 0;
 			this->tabPage1->Text = L"Ejercicio 1";
 			this->tabPage1->UseVisualStyleBackColor = true;
+			// 
+			// lbxLista
+			// 
+			this->lbxLista->FormattingEnabled = true;
+			this->lbxLista->Location = System::Drawing::Point(324, 7);
+			this->lbxLista->Name = L"lbxLista";
+			this->lbxLista->Size = System::Drawing::Size(120, 537);
+			this->lbxLista->TabIndex = 33;
+			// 
+			// txtRemoveAt
+			// 
+			this->txtRemoveAt->Location = System::Drawing::Point(6, 422);
+			this->txtRemoveAt->Name = L"txtRemoveAt";
+			this->txtRemoveAt->Size = System::Drawing::Size(100, 20);
+			this->txtRemoveAt->TabIndex = 32;
+			// 
+			// txtRemove
+			// 
+			this->txtRemove->Location = System::Drawing::Point(6, 383);
+			this->txtRemove->Name = L"txtRemove";
+			this->txtRemove->Size = System::Drawing::Size(100, 20);
+			this->txtRemove->TabIndex = 31;
+			// 
+			// txtLastIndexOf
+			// 
+			this->txtLastIndexOf->Location = System::Drawing::Point(6, 341);
+			this->txtLastIndexOf->Name = L"txtLastIndexOf";
+			this->txtLastIndexOf->Size = System::Drawing::Size(100, 20);
+			this->txtLastIndexOf->TabIndex = 30;
+			// 
+			// txtSetItemItem
+			// 
+			this->txtSetItemItem->Location = System::Drawing::Point(112, 302);
+			this->txtSetItemItem->Name = L"txtSetItemItem";
+			this->txtSetItemItem->Size = System::Drawing::Size(100, 20);
+			this->txtSetItemItem->TabIndex = 29;
+			// 
+			// txtSetItemIndex
+			// 
+			this->txtSetItemIndex->Location = System::Drawing::Point(6, 302);
+			this->txtSetItemIndex->Name = L"txtSetItemIndex";
+			this->txtSetItemIndex->Size = System::Drawing::Size(100, 20);
+			this->txtSetItemIndex->TabIndex = 28;
+			// 
+			// txtGetItem
+			// 
+			this->txtGetItem->Location = System::Drawing::Point(6, 263);
+			this->txtGetItem->Name = L"txtGetItem";
+			this->txtGetItem->Size = System::Drawing::Size(100, 20);
+			this->txtGetItem->TabIndex = 27;
+			// 
+			// txtInsertItem
+			// 
+			this->txtInsertItem->Location = System::Drawing::Point(112, 224);
+			this->txtInsertItem->Name = L"txtInsertItem";
+			this->txtInsertItem->Size = System::Drawing::Size(100, 20);
+			this->txtInsertItem->TabIndex = 26;
+			// 
+			// txtInsertIndex
+			// 
+			this->txtInsertIndex->Location = System::Drawing::Point(6, 224);
+			this->txtInsertIndex->Name = L"txtInsertIndex";
+			this->txtInsertIndex->Size = System::Drawing::Size(100, 20);
+			this->txtInsertIndex->TabIndex = 25;
+			// 
+			// txtIndexOf
+			// 
+			this->txtIndexOf->Location = System::Drawing::Point(6, 185);
+			this->txtIndexOf->Name = L"txtIndexOf";
+			this->txtIndexOf->Size = System::Drawing::Size(100, 20);
+			this->txtIndexOf->TabIndex = 24;
+			// 
+			// txtContains
+			// 
+			this->txtContains->Location = System::Drawing::Point(6, 146);
+			this->txtContains->Name = L"txtContains";
+			this->txtContains->Size = System::Drawing::Size(100, 20);
+			this->txtContains->TabIndex = 23;
+			// 
+			// txtAdd
+			// 
+			this->txtAdd->Location = System::Drawing::Point(6, 23);
+			this->txtAdd->Name = L"txtAdd";
+			this->txtAdd->Size = System::Drawing::Size(100, 20);
+			this->txtAdd->TabIndex = 22;
+			// 
+			// btnRemoveAt
+			// 
+			this->btnRemoveAt->Location = System::Drawing::Point(112, 422);
+			this->btnRemoveAt->Name = L"btnRemoveAt";
+			this->btnRemoveAt->Size = System::Drawing::Size(75, 23);
+			this->btnRemoveAt->TabIndex = 21;
+			this->btnRemoveAt->Text = L"Quitar de";
+			this->btnRemoveAt->UseVisualStyleBackColor = true;
+			// 
+			// btnRemove
+			// 
+			this->btnRemove->Location = System::Drawing::Point(112, 383);
+			this->btnRemove->Name = L"btnRemove";
+			this->btnRemove->Size = System::Drawing::Size(75, 23);
+			this->btnRemove->TabIndex = 20;
+			this->btnRemove->Text = L"Quitar";
+			this->btnRemove->UseVisualStyleBackColor = true;
+			// 
+			// btnLastIndexOf
+			// 
+			this->btnLastIndexOf->Location = System::Drawing::Point(112, 339);
+			this->btnLastIndexOf->Name = L"btnLastIndexOf";
+			this->btnLastIndexOf->Size = System::Drawing::Size(75, 23);
+			this->btnLastIndexOf->TabIndex = 19;
+			this->btnLastIndexOf->Text = L"Último de";
+			this->btnLastIndexOf->UseVisualStyleBackColor = true;
+			// 
+			// btnSetItem
+			// 
+			this->btnSetItem->Location = System::Drawing::Point(218, 302);
+			this->btnSetItem->Name = L"btnSetItem";
+			this->btnSetItem->Size = System::Drawing::Size(75, 23);
+			this->btnSetItem->TabIndex = 18;
+			this->btnSetItem->Text = L"Establecer";
+			this->btnSetItem->UseVisualStyleBackColor = true;
+			// 
+			// btnGetItem
+			// 
+			this->btnGetItem->Location = System::Drawing::Point(112, 263);
+			this->btnGetItem->Name = L"btnGetItem";
+			this->btnGetItem->Size = System::Drawing::Size(75, 23);
+			this->btnGetItem->TabIndex = 17;
+			this->btnGetItem->Text = L"Obtener";
+			this->btnGetItem->UseVisualStyleBackColor = true;
+			// 
+			// btnInsert
+			// 
+			this->btnInsert->Location = System::Drawing::Point(218, 224);
+			this->btnInsert->Name = L"btnInsert";
+			this->btnInsert->Size = System::Drawing::Size(75, 23);
+			this->btnInsert->TabIndex = 16;
+			this->btnInsert->Text = L"Insertar";
+			this->btnInsert->UseVisualStyleBackColor = true;
+			// 
+			// btnIndexOf
+			// 
+			this->btnIndexOf->Location = System::Drawing::Point(112, 185);
+			this->btnIndexOf->Name = L"btnIndexOf";
+			this->btnIndexOf->Size = System::Drawing::Size(75, 23);
+			this->btnIndexOf->TabIndex = 15;
+			this->btnIndexOf->Text = L"Índice De";
+			this->btnIndexOf->UseVisualStyleBackColor = true;
+			// 
+			// btnContains
+			// 
+			this->btnContains->Location = System::Drawing::Point(112, 146);
+			this->btnContains->Name = L"btnContains";
+			this->btnContains->Size = System::Drawing::Size(75, 23);
+			this->btnContains->TabIndex = 14;
+			this->btnContains->Text = L"Contiene";
+			this->btnContains->UseVisualStyleBackColor = true;
+			// 
+			// btnCount
+			// 
+			this->btnCount->Location = System::Drawing::Point(6, 104);
+			this->btnCount->Name = L"btnCount";
+			this->btnCount->Size = System::Drawing::Size(75, 23);
+			this->btnCount->TabIndex = 13;
+			this->btnCount->Text = L"Contar";
+			this->btnCount->UseVisualStyleBackColor = true;
+			this->btnCount->Click += gcnew System::EventHandler(this, &MyForm::btnCount_Click);
+			// 
+			// btnClear
+			// 
+			this->btnClear->Location = System::Drawing::Point(6, 62);
+			this->btnClear->Name = L"btnClear";
+			this->btnClear->Size = System::Drawing::Size(75, 23);
+			this->btnClear->TabIndex = 12;
+			this->btnClear->Text = L"Limpiar";
+			this->btnClear->UseVisualStyleBackColor = true;
+			this->btnClear->Click += gcnew System::EventHandler(this, &MyForm::btnClear_Click);
+			// 
+			// btnAdd
+			// 
+			this->btnAdd->Location = System::Drawing::Point(112, 21);
+			this->btnAdd->Name = L"btnAdd";
+			this->btnAdd->Size = System::Drawing::Size(75, 23);
+			this->btnAdd->TabIndex = 11;
+			this->btnAdd->Text = L"Añadir";
+			this->btnAdd->UseVisualStyleBackColor = true;
+			this->btnAdd->Click += gcnew System::EventHandler(this, &MyForm::btnAdd_Click);
+			// 
+			// label20
+			// 
+			this->label20->AutoSize = true;
+			this->label20->Location = System::Drawing::Point(3, 406);
+			this->label20->Name = L"label20";
+			this->label20->Size = System::Drawing::Size(57, 13);
+			this->label20->TabIndex = 10;
+			this->label20->Text = L"RemoveAt";
+			// 
+			// label19
+			// 
+			this->label19->AutoSize = true;
+			this->label19->Location = System::Drawing::Point(3, 364);
+			this->label19->Name = L"label19";
+			this->label19->Size = System::Drawing::Size(47, 13);
+			this->label19->TabIndex = 9;
+			this->label19->Text = L"Remove";
+			// 
+			// label18
+			// 
+			this->label18->AutoSize = true;
+			this->label18->Location = System::Drawing::Point(3, 325);
+			this->label18->Name = L"label18";
+			this->label18->Size = System::Drawing::Size(64, 13);
+			this->label18->TabIndex = 8;
+			this->label18->Text = L"LastIndexOf";
+			// 
+			// label17
+			// 
+			this->label17->AutoSize = true;
+			this->label17->Location = System::Drawing::Point(3, 286);
+			this->label17->Name = L"label17";
+			this->label17->Size = System::Drawing::Size(43, 13);
+			this->label17->TabIndex = 7;
+			this->label17->Text = L"SetItem";
+			// 
+			// label16
+			// 
+			this->label16->AutoSize = true;
+			this->label16->Location = System::Drawing::Point(3, 247);
+			this->label16->Name = L"label16";
+			this->label16->Size = System::Drawing::Size(44, 13);
+			this->label16->TabIndex = 6;
+			this->label16->Text = L"GetItem";
+			// 
+			// label15
+			// 
+			this->label15->AutoSize = true;
+			this->label15->Location = System::Drawing::Point(3, 208);
+			this->label15->Name = L"label15";
+			this->label15->Size = System::Drawing::Size(33, 13);
+			this->label15->TabIndex = 5;
+			this->label15->Text = L"Insert";
+			// 
+			// label14
+			// 
+			this->label14->AutoSize = true;
+			this->label14->Location = System::Drawing::Point(3, 169);
+			this->label14->Name = L"label14";
+			this->label14->Size = System::Drawing::Size(44, 13);
+			this->label14->TabIndex = 4;
+			this->label14->Text = L"IndexOf";
+			// 
+			// label13
+			// 
+			this->label13->AutoSize = true;
+			this->label13->Location = System::Drawing::Point(3, 130);
+			this->label13->Name = L"label13";
+			this->label13->Size = System::Drawing::Size(48, 13);
+			this->label13->TabIndex = 3;
+			this->label13->Text = L"Contains";
+			// 
+			// label12
+			// 
+			this->label12->AutoSize = true;
+			this->label12->Location = System::Drawing::Point(3, 88);
+			this->label12->Name = L"label12";
+			this->label12->Size = System::Drawing::Size(35, 13);
+			this->label12->TabIndex = 2;
+			this->label12->Text = L"Count";
+			// 
+			// label11
+			// 
+			this->label11->AutoSize = true;
+			this->label11->Location = System::Drawing::Point(3, 46);
+			this->label11->Name = L"label11";
+			this->label11->Size = System::Drawing::Size(31, 13);
+			this->label11->TabIndex = 1;
+			this->label11->Text = L"Clear";
+			// 
+			// label10
+			// 
+			this->label10->AutoSize = true;
+			this->label10->Location = System::Drawing::Point(3, 7);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(26, 13);
+			this->label10->TabIndex = 0;
+			this->label10->Text = L"Add";
 			// 
 			// tabPage2
 			// 
@@ -451,6 +844,15 @@ namespace Lab5FranciscoRodriguez1060820 {
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Solitario Simple";
 			// 
+			// lblCount
+			// 
+			this->lblCount->AutoSize = true;
+			this->lblCount->Location = System::Drawing::Point(112, 113);
+			this->lblCount->Name = L"lblCount";
+			this->lblCount->Size = System::Drawing::Size(10, 13);
+			this->lblCount->TabIndex = 34;
+			this->lblCount->Text = L"-";
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -461,6 +863,8 @@ namespace Lab5FranciscoRodriguez1060820 {
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
 			this->tabControl1->ResumeLayout(false);
+			this->tabPage1->ResumeLayout(false);
+			this->tabPage1->PerformLayout();
 			this->tabPage2->ResumeLayout(false);
 			this->tabPage2->PerformLayout();
 			this->ResumeLayout(false);
@@ -646,6 +1050,31 @@ private: void ManejarR(System::Object^ sender, System::EventArgs^ e, System::Win
 	}
 }
 private: System::Void lblEntrada_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+	   List* lista = new List;
+private: void actualizarInterfazLista() {
+	lbxLista->Items->Clear();
+	for (int i = 0; i < lista->Count(); i++) {
+		lbxLista->Items->Add(lista->GetItem(i));
+	}
+}
+private: System::Void btnAdd_Click(System::Object^ sender, System::EventArgs^ e) {
+	int item;
+	try {
+		item = Convert::ToInt32(txtAdd->Text);
+		lista->Add(item);
+		actualizarInterfazLista();
+	}
+	catch (Exception^ ex) {
+		MessageBox::Show("Valor inválido");
+	}
+}
+private: System::Void btnClear_Click(System::Object^ sender, System::EventArgs^ e) {
+	lista->Clear();
+	actualizarInterfazLista();
+}
+private: System::Void btnCount_Click(System::Object^ sender, System::EventArgs^ e) {
+	lblCount->Text = Convert::ToString(lista->Count());
 }
 };
 }

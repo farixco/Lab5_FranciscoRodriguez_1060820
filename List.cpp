@@ -7,12 +7,14 @@ void List::Add(int item) {
 		header = nuevo;
 	}
 	else {
-		nuevo = header;
-		while (nuevo->next != nullptr) {
-			nuevo = nuevo->next;
+		Node* iterador = new Node;
+		iterador = header;
+		while (iterador->next != nullptr) {
+			iterador = iterador->next;
 		}
 		nuevo->next = nullptr;
 		nuevo->data = item;
+		iterador->next = nuevo;
 	}
 }
 
