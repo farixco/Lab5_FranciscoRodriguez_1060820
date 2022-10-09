@@ -553,6 +553,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 		case 2: diff = 7;
 			break;
 		default:
+			MessageBox::Show("No ha seleccionado la dificultad!");
 			diff = -1;
 			valido = false;
 			break;
@@ -566,7 +567,14 @@ namespace Lab5FranciscoRodriguez1060820 {
 			valido = false;
 		}
 		if (valido) {
-			if (!juego->Mover(pos, inxOrg, inxDst)) {
+			bool movVal;
+			if (inxOrg == 8) {
+				movVal = juego->Mover(inxDst);
+			}
+			else {
+				movVal = juego->Mover(pos, inxOrg, inxDst);
+			}
+			if (!movVal) {
 				MessageBox::Show("Movimiento no valido");
 			}
 			else {
