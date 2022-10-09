@@ -113,6 +113,8 @@ namespace Lab5FranciscoRodriguez1060820 {
 	private: System::Windows::Forms::Label^ lblCount;
 	private: System::Windows::Forms::Label^ lblContains;
 	private: System::Windows::Forms::Label^ lblIndexOf;
+	private: System::Windows::Forms::Label^ lblGetItem;
+	private: System::Windows::Forms::Label^ lblLastIndexOf;
 
 	private:
 		/// <summary>
@@ -129,6 +131,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 		{
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
+			this->lblGetItem = (gcnew System::Windows::Forms::Label());
 			this->lblIndexOf = (gcnew System::Windows::Forms::Label());
 			this->lblContains = (gcnew System::Windows::Forms::Label());
 			this->lblCount = (gcnew System::Windows::Forms::Label());
@@ -196,6 +199,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 			this->lbxOrigen = (gcnew System::Windows::Forms::ListBox());
 			this->btnMover = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->lblLastIndexOf = (gcnew System::Windows::Forms::Label());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->tabPage2->SuspendLayout();
@@ -213,6 +217,8 @@ namespace Lab5FranciscoRodriguez1060820 {
 			// 
 			// tabPage1
 			// 
+			this->tabPage1->Controls->Add(this->lblLastIndexOf);
+			this->tabPage1->Controls->Add(this->lblGetItem);
 			this->tabPage1->Controls->Add(this->lblIndexOf);
 			this->tabPage1->Controls->Add(this->lblContains);
 			this->tabPage1->Controls->Add(this->lblCount);
@@ -257,6 +263,15 @@ namespace Lab5FranciscoRodriguez1060820 {
 			this->tabPage1->TabIndex = 0;
 			this->tabPage1->Text = L"Ejercicio 1";
 			this->tabPage1->UseVisualStyleBackColor = true;
+			// 
+			// lblGetItem
+			// 
+			this->lblGetItem->AutoSize = true;
+			this->lblGetItem->Location = System::Drawing::Point(215, 268);
+			this->lblGetItem->Name = L"lblGetItem";
+			this->lblGetItem->Size = System::Drawing::Size(10, 13);
+			this->lblGetItem->TabIndex = 37;
+			this->lblGetItem->Text = L"-";
 			// 
 			// lblIndexOf
 			// 
@@ -396,6 +411,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 			this->btnLastIndexOf->TabIndex = 19;
 			this->btnLastIndexOf->Text = L"Último de";
 			this->btnLastIndexOf->UseVisualStyleBackColor = true;
+			this->btnLastIndexOf->Click += gcnew System::EventHandler(this, &MyForm::btnLastIndexOf_Click);
 			// 
 			// btnSetItem
 			// 
@@ -405,6 +421,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 			this->btnSetItem->TabIndex = 18;
 			this->btnSetItem->Text = L"Establecer";
 			this->btnSetItem->UseVisualStyleBackColor = true;
+			this->btnSetItem->Click += gcnew System::EventHandler(this, &MyForm::btnSetItem_Click);
 			// 
 			// btnGetItem
 			// 
@@ -414,6 +431,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 			this->btnGetItem->TabIndex = 17;
 			this->btnGetItem->Text = L"Obtener";
 			this->btnGetItem->UseVisualStyleBackColor = true;
+			this->btnGetItem->Click += gcnew System::EventHandler(this, &MyForm::btnGetItem_Click);
 			// 
 			// btnInsert
 			// 
@@ -880,6 +898,15 @@ namespace Lab5FranciscoRodriguez1060820 {
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Solitario Simple";
 			// 
+			// lblLastIndexOf
+			// 
+			this->lblLastIndexOf->AutoSize = true;
+			this->lblLastIndexOf->Location = System::Drawing::Point(215, 344);
+			this->lblLastIndexOf->Name = L"lblLastIndexOf";
+			this->lblLastIndexOf->Size = System::Drawing::Size(10, 13);
+			this->lblLastIndexOf->TabIndex = 38;
+			this->lblLastIndexOf->Text = L"-";
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -1136,6 +1163,39 @@ private: System::Void btnInsert_Click(System::Object^ sender, System::EventArgs^
 		index = Convert::ToInt32(txtInsertIndex->Text);
 		lista->Insert(index, item);
 		actualizarInterfazLista();
+	}
+	catch (Exception^ ex) {
+		MessageBox::Show("Valor inválido");
+	}
+}
+private: System::Void btnGetItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	int index;
+	try {
+		index = Convert::ToInt32(txtGetItem->Text);
+		lblGetItem->Text = Convert::ToString(lista->GetItem(index));
+	}
+	catch (Exception^ ex) {
+		MessageBox::Show("Valor inválido");
+	}
+}
+private: System::Void btnSetItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	int item;
+	int index;
+	try {
+		item = Convert::ToInt32(txtSetItemItem->Text);
+		index = Convert::ToInt32(txtSetItemIndex->Text);
+		lista->SetItem(index, item);
+		actualizarInterfazLista();
+	}
+	catch (Exception^ ex) {
+		MessageBox::Show("Valor inválido");
+	}
+}
+private: System::Void btnLastIndexOf_Click(System::Object^ sender, System::EventArgs^ e) {
+	int item;
+	try {
+		item = Convert::ToInt32(txtLastIndexOf->Text);
+		lblIndexOf->Text = Convert::ToString(lista->LastIndexOf(item));
 	}
 	catch (Exception^ ex) {
 		MessageBox::Show("Valor inválido");
