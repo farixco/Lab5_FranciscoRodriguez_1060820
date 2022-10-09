@@ -111,6 +111,8 @@ namespace Lab5FranciscoRodriguez1060820 {
 	private: System::Windows::Forms::TextBox^ txtRemoveAt;
 	private: System::Windows::Forms::TextBox^ txtRemove;
 	private: System::Windows::Forms::Label^ lblCount;
+	private: System::Windows::Forms::Label^ lblContains;
+	private: System::Windows::Forms::Label^ lblIndexOf;
 
 	private:
 		/// <summary>
@@ -127,6 +129,9 @@ namespace Lab5FranciscoRodriguez1060820 {
 		{
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
+			this->lblIndexOf = (gcnew System::Windows::Forms::Label());
+			this->lblContains = (gcnew System::Windows::Forms::Label());
+			this->lblCount = (gcnew System::Windows::Forms::Label());
 			this->lbxLista = (gcnew System::Windows::Forms::ListBox());
 			this->txtRemoveAt = (gcnew System::Windows::Forms::TextBox());
 			this->txtRemove = (gcnew System::Windows::Forms::TextBox());
@@ -191,7 +196,6 @@ namespace Lab5FranciscoRodriguez1060820 {
 			this->lbxOrigen = (gcnew System::Windows::Forms::ListBox());
 			this->btnMover = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->lblCount = (gcnew System::Windows::Forms::Label());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->tabPage2->SuspendLayout();
@@ -209,6 +213,8 @@ namespace Lab5FranciscoRodriguez1060820 {
 			// 
 			// tabPage1
 			// 
+			this->tabPage1->Controls->Add(this->lblIndexOf);
+			this->tabPage1->Controls->Add(this->lblContains);
 			this->tabPage1->Controls->Add(this->lblCount);
 			this->tabPage1->Controls->Add(this->lbxLista);
 			this->tabPage1->Controls->Add(this->txtRemoveAt);
@@ -251,6 +257,33 @@ namespace Lab5FranciscoRodriguez1060820 {
 			this->tabPage1->TabIndex = 0;
 			this->tabPage1->Text = L"Ejercicio 1";
 			this->tabPage1->UseVisualStyleBackColor = true;
+			// 
+			// lblIndexOf
+			// 
+			this->lblIndexOf->AutoSize = true;
+			this->lblIndexOf->Location = System::Drawing::Point(215, 195);
+			this->lblIndexOf->Name = L"lblIndexOf";
+			this->lblIndexOf->Size = System::Drawing::Size(10, 13);
+			this->lblIndexOf->TabIndex = 36;
+			this->lblIndexOf->Text = L"-";
+			// 
+			// lblContains
+			// 
+			this->lblContains->AutoSize = true;
+			this->lblContains->Location = System::Drawing::Point(215, 156);
+			this->lblContains->Name = L"lblContains";
+			this->lblContains->Size = System::Drawing::Size(10, 13);
+			this->lblContains->TabIndex = 35;
+			this->lblContains->Text = L"-";
+			// 
+			// lblCount
+			// 
+			this->lblCount->AutoSize = true;
+			this->lblCount->Location = System::Drawing::Point(112, 113);
+			this->lblCount->Name = L"lblCount";
+			this->lblCount->Size = System::Drawing::Size(10, 13);
+			this->lblCount->TabIndex = 34;
+			this->lblCount->Text = L"-";
 			// 
 			// lbxLista
 			// 
@@ -390,6 +423,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 			this->btnInsert->TabIndex = 16;
 			this->btnInsert->Text = L"Insertar";
 			this->btnInsert->UseVisualStyleBackColor = true;
+			this->btnInsert->Click += gcnew System::EventHandler(this, &MyForm::btnInsert_Click);
 			// 
 			// btnIndexOf
 			// 
@@ -399,6 +433,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 			this->btnIndexOf->TabIndex = 15;
 			this->btnIndexOf->Text = L"Índice De";
 			this->btnIndexOf->UseVisualStyleBackColor = true;
+			this->btnIndexOf->Click += gcnew System::EventHandler(this, &MyForm::btnIndexOf_Click);
 			// 
 			// btnContains
 			// 
@@ -408,6 +443,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 			this->btnContains->TabIndex = 14;
 			this->btnContains->Text = L"Contiene";
 			this->btnContains->UseVisualStyleBackColor = true;
+			this->btnContains->Click += gcnew System::EventHandler(this, &MyForm::btnContains_Click);
 			// 
 			// btnCount
 			// 
@@ -844,15 +880,6 @@ namespace Lab5FranciscoRodriguez1060820 {
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Solitario Simple";
 			// 
-			// lblCount
-			// 
-			this->lblCount->AutoSize = true;
-			this->lblCount->Location = System::Drawing::Point(112, 113);
-			this->lblCount->Name = L"lblCount";
-			this->lblCount->Size = System::Drawing::Size(10, 13);
-			this->lblCount->TabIndex = 34;
-			this->lblCount->Text = L"-";
-			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -1075,6 +1102,44 @@ private: System::Void btnClear_Click(System::Object^ sender, System::EventArgs^ 
 }
 private: System::Void btnCount_Click(System::Object^ sender, System::EventArgs^ e) {
 	lblCount->Text = Convert::ToString(lista->Count());
+}
+private: System::Void btnContains_Click(System::Object^ sender, System::EventArgs^ e) {
+	int item;
+	try {
+		item = Convert::ToInt32(txtContains->Text);
+		if (lista->Contains(item)) {
+			lblContains->Text = "T";
+		}
+		else {
+			lblContains->Text = "F";
+		}
+	}
+	catch (Exception^ ex) {
+		MessageBox::Show("Valor inválido");
+	}
+}
+private: System::Void btnIndexOf_Click(System::Object^ sender, System::EventArgs^ e) {
+	int item;
+	try {
+		item = Convert::ToInt32(txtIndexOf->Text);
+		lblIndexOf->Text = Convert::ToString(lista->IndexOf(item));
+	}
+	catch (Exception^ ex) {
+		MessageBox::Show("Valor inválido");
+	}
+}
+private: System::Void btnInsert_Click(System::Object^ sender, System::EventArgs^ e) {
+	int item;
+	int index;
+	try {
+		item = Convert::ToInt32(txtInsertItem->Text);
+		index = Convert::ToInt32(txtInsertIndex->Text);
+		lista->Insert(index, item);
+		actualizarInterfazLista();
+	}
+	catch (Exception^ ex) {
+		MessageBox::Show("Valor inválido");
+	}
 }
 };
 }
