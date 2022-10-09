@@ -426,6 +426,85 @@ namespace Lab5FranciscoRodriguez1060820 {
 		}
 #pragma endregion
 		Mazo* juego = new Mazo;
+		private: void ActualizarInterfazMazo() {
+			lbxG1->Items->Clear();
+			lbxG2->Items->Clear();
+			lbxG3->Items->Clear();
+			lbxG4->Items->Clear();
+			lbxG5->Items->Clear();
+			lbxG6->Items->Clear();
+			lbxG7->Items->Clear();
+			for (int i = 0; i < juego->enJuego[0].Count(); i++) {
+				String^ ex = Convert::ToString(juego->enJuego[0].GetItem(i)->Numero);
+				if (juego->enJuego[0].GetItem(i)->Color) {
+					ex += "N";
+				}
+				else {
+					ex += "R";
+				}
+				lbxG1->Items->Add(ex);
+			}
+			for (int i = 0; i < juego->enJuego[1].Count(); i++) {
+				String^ ex = Convert::ToString(juego->enJuego[1].GetItem(i)->Numero);
+				if (juego->enJuego[1].GetItem(i)->Color) {
+					ex += "N";
+				}
+				else {
+					ex += "R";
+				}
+				lbxG2->Items->Add(ex);
+			}
+			for (int i = 0; i < juego->enJuego[2].Count(); i++) {
+				String^ ex = Convert::ToString(juego->enJuego[2].GetItem(i)->Numero);
+				if (juego->enJuego[2].GetItem(i)->Color) {
+					ex += "N";
+				}
+				else {
+					ex += "R";
+				}
+				lbxG3->Items->Add(ex);
+			}
+			for (int i = 0; i < juego->enJuego[3].Count(); i++) {
+				String^ ex = Convert::ToString(juego->enJuego[3].GetItem(i)->Numero);
+				if (juego->enJuego[3].GetItem(i)->Color) {
+					ex += "N";
+				}
+				else {
+					ex += "R";
+				}
+				lbxG4->Items->Add(ex);
+			}
+			for (int i = 0; i < juego->enJuego[4].Count(); i++) {
+				String^ ex = Convert::ToString(juego->enJuego[4].GetItem(i)->Numero);
+				if (juego->enJuego[4].GetItem(i)->Color) {
+					ex += "N";
+				}
+				else {
+					ex += "R";
+				}
+				lbxG5->Items->Add(ex);
+			}
+			for (int i = 0; i < juego->enJuego[5].Count(); i++) {
+				String^ ex = Convert::ToString(juego->enJuego[5].GetItem(i)->Numero);
+				if (juego->enJuego[5].GetItem(i)->Color) {
+					ex += "N";
+				}
+				else {
+					ex += "R";
+				}
+				lbxG6->Items->Add(ex);
+			}
+			for (int i = 0; i < juego->enJuego[6].Count(); i++) {
+				String^ ex = Convert::ToString(juego->enJuego[6].GetItem(i)->Numero);
+				if (juego->enJuego[6].GetItem(i)->Color) {
+					ex += "N";
+				}
+				else {
+					ex += "R";
+				}
+				lbxG7->Items->Add(ex);
+			}
+		}
 	private: System::Void btnMover_Click(System::Object^ sender, System::EventArgs^ e) {
 		bool valido = true;
 		int inxOrg = lbxOrigen->SelectedIndex;
@@ -450,86 +529,14 @@ namespace Lab5FranciscoRodriguez1060820 {
 			valido = false;
 		}
 		if (valido) {
-			juego->Mover(pos, inxOrg, inxDst);
-			lbxG1->Items->Clear();
-			lbxG2->Items->Clear();
-			lbxG3->Items->Clear();
-			lbxG4->Items->Clear();
-			lbxG5->Items->Clear();
-			lbxG6->Items->Clear();
-			lbxG7->Items->Clear();
-			for (int i = 0; i < juego->grupos[0].Count(); i++) {
-				String^ ex = Convert::ToString(juego->grupos[0].GetItem(i)->Numero);
-				if (juego->grupos[0].GetItem(i)->Color) {
-					ex += "N";
-				}
-				else {
-					ex += "R";
-				}
-				lbxG1->Items->Add(ex);
+			if (!juego->Mover(pos, inxOrg, inxDst)) {
+				MessageBox::Show("Movimiento no valido");
 			}
-			for (int i = 0; i < juego->grupos[1].Count(); i++) {
-				String^ ex = Convert::ToString(juego->grupos[1].GetItem(i)->Numero);
-				if (juego->grupos[1].GetItem(i)->Color) {
-					ex += "N";
+			else {
+				ActualizarInterfazMazo();
+				if (juego->Ganancia(diff)) {
+					MessageBox::Show("Enhorabuena! Ha ganado el juego!");
 				}
-				else {
-					ex += "R";
-				}
-				lbxG2->Items->Add(ex);
-			}
-			for (int i = 0; i < juego->grupos[2].Count(); i++) {
-				String^ ex = Convert::ToString(juego->grupos[2].GetItem(i)->Numero);
-				if (juego->grupos[2].GetItem(i)->Color) {
-					ex += "N";
-				}
-				else {
-					ex += "R";
-				}
-				lbxG3->Items->Add(ex);
-			}
-			for (int i = 0; i < juego->grupos[3].Count(); i++) {
-				String^ ex = Convert::ToString(juego->grupos[3].GetItem(i)->Numero);
-				if (juego->grupos[3].GetItem(i)->Color) {
-					ex += "N";
-				}
-				else {
-					ex += "R";
-				}
-				lbxG4->Items->Add(ex);
-			}
-			for (int i = 0; i < juego->grupos[4].Count(); i++) {
-				String^ ex = Convert::ToString(juego->grupos[4].GetItem(i)->Numero);
-				if (juego->grupos[4].GetItem(i)->Color) {
-					ex += "N";
-				}
-				else {
-					ex += "R";
-				}
-				lbxG5->Items->Add(ex);
-			}
-			for (int i = 0; i < juego->grupos[5].Count(); i++) {
-				String^ ex = Convert::ToString(juego->grupos[5].GetItem(i)->Numero);
-				if (juego->grupos[5].GetItem(i)->Color) {
-					ex += "N";
-				}
-				else {
-					ex += "R";
-				}
-				lbxG6->Items->Add(ex);
-			}
-			for (int i = 0; i < juego->grupos[6].Count(); i++) {
-				String^ ex = Convert::ToString(juego->grupos[6].GetItem(i)->Numero);
-				if (juego->grupos[6].GetItem(i)->Color) {
-					ex += "N";
-				}
-				else {
-					ex += "R";
-				}
-				lbxG7->Items->Add(ex);
-			}
-			if (juego->Ganancia(diff)) {
-				MessageBox::Show("Enhorabuena! Ha ganado el juego!");
 			}
 		}
 	}
@@ -545,83 +552,7 @@ private: System::Void btnBarajar_Click(System::Object^ sender, System::EventArgs
 	lbxOrigen->Visible = true;
 	txtIndice->Visible = true;
 	btnMover->Visible = true;
-	lbxG1->Items->Clear();
-	lbxG2->Items->Clear();
-	lbxG3->Items->Clear();
-	lbxG4->Items->Clear();
-	lbxG5->Items->Clear();
-	lbxG6->Items->Clear();
-	lbxG7->Items->Clear();
-	for (int i = 0; i < juego->grupos[0].Count(); i++) {
-		String^ ex = Convert::ToString(juego->grupos[0].GetItem(i)->Numero);
-		if (juego->grupos[0].GetItem(i)->Color) {
-			ex += "N";
-		}
-		else {
-			ex += "R";
-		}
-		lbxG1->Items->Add(ex);
-	}
-	for (int i = 0; i < juego->grupos[1].Count(); i++) {
-		String^ ex = Convert::ToString(juego->grupos[1].GetItem(i)->Numero);
-		if (juego->grupos[1].GetItem(i)->Color) {
-			ex += "N";
-		}
-		else {
-			ex += "R";
-		}
-		lbxG2->Items->Add(ex);
-	}
-	for (int i = 0; i < juego->grupos[2].Count(); i++) {
-		String^ ex = Convert::ToString(juego->grupos[2].GetItem(i)->Numero);
-		if (juego->grupos[2].GetItem(i)->Color) {
-			ex += "N";
-		}
-		else {
-			ex += "R";
-		}
-		lbxG3->Items->Add(ex);
-	}
-	for (int i = 0; i < juego->grupos[3].Count(); i++) {
-		String^ ex = Convert::ToString(juego->grupos[3].GetItem(i)->Numero);
-		if (juego->grupos[3].GetItem(i)->Color) {
-			ex += "N";
-		}
-		else {
-			ex += "R";
-		}
-		lbxG4->Items->Add(ex);
-	}
-	for (int i = 0; i < juego->grupos[4].Count(); i++) {
-		String^ ex = Convert::ToString(juego->grupos[4].GetItem(i)->Numero);
-		if (juego->grupos[4].GetItem(i)->Color) {
-			ex += "N";
-		}
-		else {
-			ex += "R";
-		}
-		lbxG5->Items->Add(ex);
-	}
-	for (int i = 0; i < juego->grupos[5].Count(); i++) {
-		String^ ex = Convert::ToString(juego->grupos[5].GetItem(i)->Numero);
-		if (juego->grupos[5].GetItem(i)->Color) {
-			ex += "N";
-		}
-		else {
-			ex += "R";
-		}
-		lbxG6->Items->Add(ex);
-	}
-	for (int i = 0; i < juego->grupos[6].Count(); i++) {
-		String^ ex = Convert::ToString(juego->grupos[6].GetItem(i)->Numero);
-		if (juego->grupos[6].GetItem(i)->Color) {
-			ex += "N";
-		}
-		else {
-			ex += "R";
-		}
-		lbxG7->Items->Add(ex);
-	}
+	ActualizarInterfazMazo();
 }
 };
 }

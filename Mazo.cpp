@@ -18,6 +18,9 @@ void Mazo::Barajar() {
 		while (grupos[i].Count() != 0) {
 			grupos[i].Pop();
 		}
+		while (enJuego[i].Count() != 0) {
+			enJuego[i].Pop();
+		}
 	}
 		/// función para barajar el mazo empieza con una lista de 52 cartas (el deck completo)
 		/// que procederá a ser cambiada de forma aleatoria y de ahí voy a añadir secuencial en los grupos en sí
@@ -71,6 +74,9 @@ bool Mazo::Mover(int index, int origen, int destino) {
 	bool movida;
 	if (enJuego[destino].Validez() == true) {
 		movida = true;
+		if (enJuego[origen].Count() == 0 && grupos[origen].Count() != 0) {
+			enJuego[origen].Push(grupos[origen].Pop());
+		}
 	}
 	else {
 		for (int i = 0; i < index; i++) {
