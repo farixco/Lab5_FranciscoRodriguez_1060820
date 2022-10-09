@@ -92,6 +92,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
+			this->btnDescMaz = (gcnew System::Windows::Forms::Button());
 			this->lblMazo = (gcnew System::Windows::Forms::Label());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->lbxG7 = (gcnew System::Windows::Forms::ListBox());
@@ -120,7 +121,6 @@ namespace Lab5FranciscoRodriguez1060820 {
 			this->lbxOrigen = (gcnew System::Windows::Forms::ListBox());
 			this->btnMover = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->btnDescMaz = (gcnew System::Windows::Forms::Button());
 			this->tabControl1->SuspendLayout();
 			this->tabPage2->SuspendLayout();
 			this->SuspendLayout();
@@ -132,7 +132,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 			this->tabControl1->Location = System::Drawing::Point(12, 12);
 			this->tabControl1->Name = L"tabControl1";
 			this->tabControl1->SelectedIndex = 0;
-			this->tabControl1->Size = System::Drawing::Size(784, 575);
+			this->tabControl1->Size = System::Drawing::Size(458, 577);
 			this->tabControl1->TabIndex = 0;
 			// 
 			// tabPage1
@@ -140,7 +140,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 			this->tabPage1->Location = System::Drawing::Point(4, 22);
 			this->tabPage1->Name = L"tabPage1";
 			this->tabPage1->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage1->Size = System::Drawing::Size(776, 549);
+			this->tabPage1->Size = System::Drawing::Size(450, 551);
 			this->tabPage1->TabIndex = 0;
 			this->tabPage1->Text = L"Ejercicio 1";
 			this->tabPage1->UseVisualStyleBackColor = true;
@@ -179,15 +179,25 @@ namespace Lab5FranciscoRodriguez1060820 {
 			this->tabPage2->Location = System::Drawing::Point(4, 22);
 			this->tabPage2->Name = L"tabPage2";
 			this->tabPage2->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage2->Size = System::Drawing::Size(776, 549);
+			this->tabPage2->Size = System::Drawing::Size(450, 551);
 			this->tabPage2->TabIndex = 1;
 			this->tabPage2->Text = L"Ejercicio 2";
 			this->tabPage2->UseVisualStyleBackColor = true;
 			// 
+			// btnDescMaz
+			// 
+			this->btnDescMaz->Location = System::Drawing::Point(95, 63);
+			this->btnDescMaz->Name = L"btnDescMaz";
+			this->btnDescMaz->Size = System::Drawing::Size(95, 39);
+			this->btnDescMaz->TabIndex = 36;
+			this->btnDescMaz->Text = L"Mostrar siguiente carta";
+			this->btnDescMaz->UseVisualStyleBackColor = true;
+			this->btnDescMaz->Click += gcnew System::EventHandler(this, &MyForm::btnDescMaz_Click);
+			// 
 			// lblMazo
 			// 
 			this->lblMazo->AutoSize = true;
-			this->lblMazo->Location = System::Drawing::Point(690, 40);
+			this->lblMazo->Location = System::Drawing::Point(131, 41);
 			this->lblMazo->Name = L"lblMazo";
 			this->lblMazo->Size = System::Drawing::Size(10, 13);
 			this->lblMazo->TabIndex = 35;
@@ -196,7 +206,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 			// label9
 			// 
 			this->label9->AutoSize = true;
-			this->label9->Location = System::Drawing::Point(647, 40);
+			this->label9->Location = System::Drawing::Point(92, 41);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(36, 13);
 			this->label9->TabIndex = 34;
@@ -205,7 +215,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 			// lbxG7
 			// 
 			this->lbxG7->FormattingEnabled = true;
-			this->lbxG7->Location = System::Drawing::Point(628, 302);
+			this->lbxG7->Location = System::Drawing::Point(382, 357);
 			this->lbxG7->Name = L"lbxG7";
 			this->lbxG7->Size = System::Drawing::Size(56, 186);
 			this->lbxG7->TabIndex = 33;
@@ -213,7 +223,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 			// lbxG6
 			// 
 			this->lbxG6->FormattingEnabled = true;
-			this->lbxG6->Location = System::Drawing::Point(541, 302);
+			this->lbxG6->Location = System::Drawing::Point(320, 357);
 			this->lbxG6->Name = L"lbxG6";
 			this->lbxG6->Size = System::Drawing::Size(56, 186);
 			this->lbxG6->TabIndex = 32;
@@ -221,7 +231,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 			// lbxG5
 			// 
 			this->lbxG5->FormattingEnabled = true;
-			this->lbxG5->Location = System::Drawing::Point(462, 302);
+			this->lbxG5->Location = System::Drawing::Point(258, 357);
 			this->lbxG5->Name = L"lbxG5";
 			this->lbxG5->Size = System::Drawing::Size(56, 186);
 			this->lbxG5->TabIndex = 31;
@@ -229,7 +239,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 			// lbxG4
 			// 
 			this->lbxG4->FormattingEnabled = true;
-			this->lbxG4->Location = System::Drawing::Point(378, 302);
+			this->lbxG4->Location = System::Drawing::Point(196, 357);
 			this->lbxG4->Name = L"lbxG4";
 			this->lbxG4->Size = System::Drawing::Size(56, 186);
 			this->lbxG4->TabIndex = 30;
@@ -237,7 +247,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 			// lbxG3
 			// 
 			this->lbxG3->FormattingEnabled = true;
-			this->lbxG3->Location = System::Drawing::Point(278, 302);
+			this->lbxG3->Location = System::Drawing::Point(134, 357);
 			this->lbxG3->Name = L"lbxG3";
 			this->lbxG3->Size = System::Drawing::Size(56, 186);
 			this->lbxG3->TabIndex = 29;
@@ -245,7 +255,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 			// lbxG2
 			// 
 			this->lbxG2->FormattingEnabled = true;
-			this->lbxG2->Location = System::Drawing::Point(174, 302);
+			this->lbxG2->Location = System::Drawing::Point(72, 357);
 			this->lbxG2->Name = L"lbxG2";
 			this->lbxG2->Size = System::Drawing::Size(56, 186);
 			this->lbxG2->TabIndex = 28;
@@ -253,7 +263,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 			// lbxG1
 			// 
 			this->lbxG1->FormattingEnabled = true;
-			this->lbxG1->Location = System::Drawing::Point(72, 302);
+			this->lbxG1->Location = System::Drawing::Point(9, 357);
 			this->lbxG1->Name = L"lbxG1";
 			this->lbxG1->Size = System::Drawing::Size(56, 186);
 			this->lbxG1->TabIndex = 27;
@@ -261,7 +271,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(647, 259);
+			this->label8->Location = System::Drawing::Point(379, 341);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(21, 13);
 			this->label8->TabIndex = 26;
@@ -270,7 +280,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(556, 259);
+			this->label7->Location = System::Drawing::Point(322, 341);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(21, 13);
 			this->label7->TabIndex = 25;
@@ -279,7 +289,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(478, 259);
+			this->label6->Location = System::Drawing::Point(255, 341);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(21, 13);
 			this->label6->TabIndex = 24;
@@ -288,7 +298,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(395, 259);
+			this->label5->Location = System::Drawing::Point(193, 341);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(21, 13);
 			this->label5->TabIndex = 23;
@@ -297,7 +307,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(297, 259);
+			this->label4->Location = System::Drawing::Point(131, 341);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(21, 13);
 			this->label4->TabIndex = 22;
@@ -306,7 +316,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(193, 259);
+			this->label3->Location = System::Drawing::Point(72, 341);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(21, 13);
 			this->label3->TabIndex = 21;
@@ -315,7 +325,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(90, 259);
+			this->label2->Location = System::Drawing::Point(6, 341);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(21, 13);
 			this->label2->TabIndex = 20;
@@ -323,9 +333,9 @@ namespace Lab5FranciscoRodriguez1060820 {
 			// 
 			// btnBarajar
 			// 
-			this->btnBarajar->Location = System::Drawing::Point(9, 40);
+			this->btnBarajar->Location = System::Drawing::Point(95, 108);
 			this->btnBarajar->Name = L"btnBarajar";
-			this->btnBarajar->Size = System::Drawing::Size(75, 23);
+			this->btnBarajar->Size = System::Drawing::Size(95, 41);
 			this->btnBarajar->TabIndex = 19;
 			this->btnBarajar->Text = L"Barajar";
 			this->btnBarajar->UseVisualStyleBackColor = true;
@@ -334,7 +344,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 			// lblBarajar
 			// 
 			this->lblBarajar->AutoSize = true;
-			this->lblBarajar->Location = System::Drawing::Point(315, 166);
+			this->lblBarajar->Location = System::Drawing::Point(240, 122);
 			this->lblBarajar->Name = L"lblBarajar";
 			this->lblBarajar->Size = System::Drawing::Size(160, 13);
 			this->lblBarajar->TabIndex = 18;
@@ -343,7 +353,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 			// lblDificultad
 			// 
 			this->lblDificultad->AutoSize = true;
-			this->lblDificultad->Location = System::Drawing::Point(647, 73);
+			this->lblDificultad->Location = System::Drawing::Point(322, 282);
 			this->lblDificultad->Name = L"lblDificultad";
 			this->lblDificultad->Size = System::Drawing::Size(74, 13);
 			this->lblDificultad->TabIndex = 17;
@@ -353,16 +363,16 @@ namespace Lab5FranciscoRodriguez1060820 {
 			// 
 			this->lbxDificultad->FormattingEnabled = true;
 			this->lbxDificultad->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Facil", L"Medio", L"Dificil" });
-			this->lbxDificultad->Location = System::Drawing::Point(650, 93);
+			this->lbxDificultad->Location = System::Drawing::Point(403, 269);
 			this->lbxDificultad->Name = L"lbxDificultad";
-			this->lbxDificultad->Size = System::Drawing::Size(120, 95);
+			this->lbxDificultad->Size = System::Drawing::Size(35, 43);
 			this->lbxDificultad->TabIndex = 16;
 			this->lbxDificultad->Visible = false;
 			// 
 			// lblDestino
 			// 
 			this->lblDestino->AutoSize = true;
-			this->lblDestino->Location = System::Drawing::Point(171, 22);
+			this->lblDestino->Location = System::Drawing::Point(50, 22);
 			this->lblDestino->Name = L"lblDestino";
 			this->lblDestino->Size = System::Drawing::Size(43, 13);
 			this->lblDestino->TabIndex = 15;
@@ -372,7 +382,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 			// lblOrigen
 			// 
 			this->lblOrigen->AutoSize = true;
-			this->lblOrigen->Location = System::Drawing::Point(90, 22);
+			this->lblOrigen->Location = System::Drawing::Point(6, 22);
 			this->lblOrigen->Name = L"lblOrigen";
 			this->lblOrigen->Size = System::Drawing::Size(38, 13);
 			this->lblOrigen->TabIndex = 14;
@@ -382,16 +392,17 @@ namespace Lab5FranciscoRodriguez1060820 {
 			// lblEntrada
 			// 
 			this->lblEntrada->AutoSize = true;
-			this->lblEntrada->Location = System::Drawing::Point(252, 40);
+			this->lblEntrada->Location = System::Drawing::Point(6, 152);
 			this->lblEntrada->Name = L"lblEntrada";
 			this->lblEntrada->Size = System::Drawing::Size(164, 26);
 			this->lblEntrada->TabIndex = 13;
 			this->lblEntrada->Text = L"Ingrese posicion de carta a tomar\r\n desde arriba hasta abajo";
 			this->lblEntrada->Visible = false;
+			this->lblEntrada->Click += gcnew System::EventHandler(this, &MyForm::lblEntrada_Click);
 			// 
 			// txtIndice
 			// 
-			this->txtIndice->Location = System::Drawing::Point(252, 70);
+			this->txtIndice->Location = System::Drawing::Point(9, 181);
 			this->txtIndice->Name = L"txtIndice";
 			this->txtIndice->Size = System::Drawing::Size(100, 20);
 			this->txtIndice->TabIndex = 12;
@@ -401,9 +412,9 @@ namespace Lab5FranciscoRodriguez1060820 {
 			// 
 			this->lbxDestino->FormattingEnabled = true;
 			this->lbxDestino->Items->AddRange(gcnew cli::array< System::Object^  >(7) { L"G1", L"G2", L"G3", L"G4", L"G5", L"G6", L"G7" });
-			this->lbxDestino->Location = System::Drawing::Point(171, 41);
+			this->lbxDestino->Location = System::Drawing::Point(53, 41);
 			this->lbxDestino->Name = L"lbxDestino";
-			this->lbxDestino->Size = System::Drawing::Size(75, 147);
+			this->lbxDestino->Size = System::Drawing::Size(31, 108);
 			this->lbxDestino->TabIndex = 11;
 			this->lbxDestino->Visible = false;
 			// 
@@ -414,15 +425,15 @@ namespace Lab5FranciscoRodriguez1060820 {
 				L"G1", L"G2", L"G3", L"G4", L"G5", L"G6", L"G7",
 					L"Mazo"
 			});
-			this->lbxOrigen->Location = System::Drawing::Point(90, 41);
+			this->lbxOrigen->Location = System::Drawing::Point(9, 41);
 			this->lbxOrigen->Name = L"lbxOrigen";
-			this->lbxOrigen->Size = System::Drawing::Size(75, 147);
+			this->lbxOrigen->Size = System::Drawing::Size(35, 108);
 			this->lbxOrigen->TabIndex = 10;
 			this->lbxOrigen->Visible = false;
 			// 
 			// btnMover
 			// 
-			this->btnMover->Location = System::Drawing::Point(268, 96);
+			this->btnMover->Location = System::Drawing::Point(6, 207);
 			this->btnMover->Name = L"btnMover";
 			this->btnMover->Size = System::Drawing::Size(75, 23);
 			this->btnMover->TabIndex = 9;
@@ -440,22 +451,13 @@ namespace Lab5FranciscoRodriguez1060820 {
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Solitario Simple";
 			// 
-			// btnDescMaz
-			// 
-			this->btnDescMaz->Location = System::Drawing::Point(9, 73);
-			this->btnDescMaz->Name = L"btnDescMaz";
-			this->btnDescMaz->Size = System::Drawing::Size(75, 23);
-			this->btnDescMaz->TabIndex = 36;
-			this->btnDescMaz->Text = L"Descartar";
-			this->btnDescMaz->UseVisualStyleBackColor = true;
-			this->btnDescMaz->Click += gcnew System::EventHandler(this, &MyForm::btnDescMaz_Click);
-			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(808, 591);
+			this->ClientSize = System::Drawing::Size(478, 596);
 			this->Controls->Add(this->tabControl1);
+			this->KeyPreview = true;
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
 			this->tabControl1->ResumeLayout(false);
@@ -611,6 +613,11 @@ namespace Lab5FranciscoRodriguez1060820 {
 				ActualizarInterfazMazo();
 				if (juego->Ganancia(diff)) {
 					MessageBox::Show("Enhorabuena! Ha ganado el juego!");
+					lbxDestino->Visible = false;
+					lbxDificultad->Visible = false;
+					lbxOrigen->Visible = false;
+					txtIndice->Visible = false;
+					btnMover->Visible = false;
 				}
 			}
 		}
@@ -632,6 +639,13 @@ private: System::Void btnBarajar_Click(System::Object^ sender, System::EventArgs
 private: System::Void btnDescMaz_Click(System::Object^ sender, System::EventArgs^ e) {
 	juego->mazo->Pop();
 	ActualizarInterfazMazo();
+}
+private: void ManejarR(System::Object^ sender, System::EventArgs^ e, System::Windows::Forms::KeyEventArgs^ ex) {
+	if (ex->KeyCode == Keys::R) {
+		btnBarajar_Click(sender, e);
+	}
+}
+private: System::Void lblEntrada_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
