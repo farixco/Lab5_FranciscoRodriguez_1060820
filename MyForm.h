@@ -662,6 +662,7 @@ private: System::Windows::Forms::Label^ lblRemove;
 			this->btnDescMaz->TabIndex = 36;
 			this->btnDescMaz->Text = L"Mostrar siguiente carta";
 			this->btnDescMaz->UseVisualStyleBackColor = true;
+			this->btnDescMaz->Visible = false;
 			this->btnDescMaz->Click += gcnew System::EventHandler(this, &MyForm::btnDescMaz_Click);
 			// 
 			// lblMazo
@@ -1090,6 +1091,7 @@ private: System::Windows::Forms::Label^ lblRemove;
 					lbxOrigen->Visible = false;
 					txtIndice->Visible = false;
 					btnMover->Visible = false;
+					btnDescMaz->Visible = false;
 				}
 			}
 		}
@@ -1106,6 +1108,7 @@ private: System::Void btnBarajar_Click(System::Object^ sender, System::EventArgs
 	lbxOrigen->Visible = true;
 	txtIndice->Visible = true;
 	btnMover->Visible = true;
+	btnDescMaz->Visible = true;
 	ActualizarInterfazMazo();
 }
 private: System::Void btnDescMaz_Click(System::Object^ sender, System::EventArgs^ e) {
