@@ -146,5 +146,7 @@ void List::RemoveAt(int index) {
 	for (int i = 0; i < index - 1; i++) {
 		iterador = iterador->next;
 	}
-	iterador->next = iterador->next->next;
+	if (iterador->next != nullptr) {
+		iterador->next = iterador->next->next;
+	}
 }

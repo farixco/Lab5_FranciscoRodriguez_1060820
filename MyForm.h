@@ -1209,7 +1209,7 @@ private: System::Void btnLastIndexOf_Click(System::Object^ sender, System::Event
 	int item;
 	try {
 		item = Convert::ToInt32(txtLastIndexOf->Text);
-		lblIndexOf->Text = Convert::ToString(lista->LastIndexOf(item));
+		lblLastIndexOf->Text = Convert::ToString(lista->LastIndexOf(item));
 	}
 	catch (Exception^ ex) {
 		MessageBox::Show("Valor inválido");
