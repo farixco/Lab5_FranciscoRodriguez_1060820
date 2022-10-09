@@ -78,7 +78,9 @@ bool PilaCarta::Validez() {
 	for (int i = 0; i < this->Count() - 1; i++) {
 		if (iterador->Color == iterador->Next->Color || (iterador->Numero + 1) != iterador->Next->Numero) {
 			valido = false;
+			i = this->Count();
 		}
+		iterador = iterador->Next;
 	}
 	return valido;
 }

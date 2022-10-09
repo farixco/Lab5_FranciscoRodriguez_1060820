@@ -74,6 +74,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ lblMazo;
 	private: System::Windows::Forms::Label^ label9;
+	private: System::Windows::Forms::Button^ btnDescMaz;
 
 	private:
 		/// <summary>
@@ -119,6 +120,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 			this->lbxOrigen = (gcnew System::Windows::Forms::ListBox());
 			this->btnMover = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->btnDescMaz = (gcnew System::Windows::Forms::Button());
 			this->tabControl1->SuspendLayout();
 			this->tabPage2->SuspendLayout();
 			this->SuspendLayout();
@@ -145,6 +147,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 			// 
 			// tabPage2
 			// 
+			this->tabPage2->Controls->Add(this->btnDescMaz);
 			this->tabPage2->Controls->Add(this->lblMazo);
 			this->tabPage2->Controls->Add(this->label9);
 			this->tabPage2->Controls->Add(this->lbxG7);
@@ -320,7 +323,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 			// 
 			// btnBarajar
 			// 
-			this->btnBarajar->Location = System::Drawing::Point(350, 140);
+			this->btnBarajar->Location = System::Drawing::Point(9, 40);
 			this->btnBarajar->Name = L"btnBarajar";
 			this->btnBarajar->Size = System::Drawing::Size(75, 23);
 			this->btnBarajar->TabIndex = 19;
@@ -419,7 +422,7 @@ namespace Lab5FranciscoRodriguez1060820 {
 			// 
 			// btnMover
 			// 
-			this->btnMover->Location = System::Drawing::Point(9, 40);
+			this->btnMover->Location = System::Drawing::Point(268, 96);
 			this->btnMover->Name = L"btnMover";
 			this->btnMover->Size = System::Drawing::Size(75, 23);
 			this->btnMover->TabIndex = 9;
@@ -436,6 +439,16 @@ namespace Lab5FranciscoRodriguez1060820 {
 			this->label1->Size = System::Drawing::Size(78, 13);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Solitario Simple";
+			// 
+			// btnDescMaz
+			// 
+			this->btnDescMaz->Location = System::Drawing::Point(9, 73);
+			this->btnDescMaz->Name = L"btnDescMaz";
+			this->btnDescMaz->Size = System::Drawing::Size(75, 23);
+			this->btnDescMaz->TabIndex = 36;
+			this->btnDescMaz->Text = L"Descartar";
+			this->btnDescMaz->UseVisualStyleBackColor = true;
+			this->btnDescMaz->Click += gcnew System::EventHandler(this, &MyForm::btnDescMaz_Click);
 			// 
 			// MyForm
 			// 
@@ -531,13 +544,20 @@ namespace Lab5FranciscoRodriguez1060820 {
 				}
 				lbxG7->Items->Add(ex);
 			}
-			String^ mz = Convert::ToString(juego->mazo->GetItem(0)->Numero);
-			if (juego->mazo->GetItem(0)->Color) {
-				mz += "N";
+			if (juego->mazo->Count() != 0) {
+				String^ mz = Convert::ToString(juego->mazo->GetItem(0)->Numero);
+				if (juego->mazo->GetItem(0)->Color) {
+					mz += "N";
+				}
+				else {
+					mz += "R";
+				}
+				lblMazo->Text = mz;
 			}
 			else {
-				mz += "R";
+				lblMazo->Text = "-";
 			}
+
 		}
 	private: System::Void btnMover_Click(System::Object^ sender, System::EventArgs^ e) {
 		bool valido = true;
@@ -568,11 +588,21 @@ namespace Lab5FranciscoRodriguez1060820 {
 		}
 		if (valido) {
 			bool movVal;
-			if (inxOrg == 8) {
-				movVal = juego->Mover(inxDst);
+			if (inxOrg == 7) {
+				try {
+					movVal = juego->Mover(inxDst);
+				}
+				catch (Exception^ ex) {
+					movVal = false;
+				}
 			}
 			else {
-				movVal = juego->Mover(pos, inxOrg, inxDst);
+				try {
+					movVal = juego->Mover(juego->enJuego[inxOrg].Count() + 1 - pos, inxOrg, inxDst);
+				}
+				catch (Exception^ ex) {
+					movVal = false;
+				}
 			}
 			if (!movVal) {
 				MessageBox::Show("Movimiento no valido");
@@ -597,6 +627,10 @@ private: System::Void btnBarajar_Click(System::Object^ sender, System::EventArgs
 	lbxOrigen->Visible = true;
 	txtIndice->Visible = true;
 	btnMover->Visible = true;
+	ActualizarInterfazMazo();
+}
+private: System::Void btnDescMaz_Click(System::Object^ sender, System::EventArgs^ e) {
+	juego->mazo->Pop();
 	ActualizarInterfazMazo();
 }
 };

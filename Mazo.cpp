@@ -64,6 +64,9 @@ bool Mazo::Mover(int index, int origen, int destino) {
 	if (index > enJuego[origen].Count() || index < 0) {
 		throw gcnew System::IndexOutOfRangeException;
 	}
+	if (enJuego[destino].Count() == 0 && grupos[destino].Count() == 0) {
+		return false;
+	}
 	PilaCarta* temporal = new PilaCarta;
 	for (int i = 0; i < index; i++) {
 		temporal->Push(enJuego[origen].Pop());
@@ -91,6 +94,9 @@ bool Mazo::Mover(int index, int origen, int destino) {
 }
 
 bool Mazo::Mover(int destino) {
+	if (enJuego[destino].Count() == 0 && grupos[destino].Count() == 0) {
+		return false;
+	}
 	enJuego[destino].Push(mazo->Pop());
 	bool movida;
 	if (enJuego[destino].Validez()) {
